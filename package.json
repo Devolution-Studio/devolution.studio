@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "start": "vite ./src/"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-legacy": "^3.0.2",
+        "terser": "^5.16.2"
+    }
+}

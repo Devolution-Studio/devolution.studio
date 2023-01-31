@@ -1,0 +1,17 @@
+{
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": true,
+    "bracketSpacing": true,
+    "bracketSameLine": true,
+    "singleQuote": true,
+    "endOfLine": "lf",
+    "overrides": [
+        {
+            "files": "src/**/*.html",
+            "options": {
+                "printWidth": 140
+            }
+        }
+    ]
+}
