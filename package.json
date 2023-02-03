@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "start": "vite ./src/"
+        "start": "vite ./src/ --port 8080"
     },
     "devDependencies": {
         "@vitejs/plugin-legacy": "^3.0.2",
