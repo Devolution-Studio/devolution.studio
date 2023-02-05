@@ -25,7 +25,7 @@
 
     // GSAP: turn off console warnings
     gsap.config({
-        nullTargetWarn: false,
+        nullTargetWarn: true,
     });
 
     window.App = {};
@@ -109,7 +109,6 @@
         masonryGridInit();
 
         feather.replace();
-        videoBtn();
 
         //
         // your custom plugins init here
@@ -2217,7 +2216,7 @@
                     field.classList.add('-error');
                     validForm = false;
                     errorField.classList.add('is-active');
-                    errorField.innerHTML = 'Please fill this field';
+                    errorField.innerHTML = 'Champs requis';
                     continue;
                 }
 
@@ -2226,7 +2225,7 @@
                         field.classList.add('-error');
                         validForm = false;
                         errorField.classList.add('is-active');
-                        errorField.innerHTML = 'Please enter correct email';
+                        errorField.innerHTML = 'Email incorrect';
                         continue;
                     }
                 }
@@ -2267,7 +2266,7 @@
                     }, 400);
                 };
 
-                request.open('POST', 'contact.php', true);
+                request.open('POST', form.getAttribute('action'), true);
                 request.setRequestHeader(
                     'Content-type',
                     'application/x-www-form-urlencoded'
@@ -2421,28 +2420,17 @@
 
     function uiScrollDown() {
         const target = document.querySelector('.js-ui-scroll-button');
-
         if (!target) return;
 
         const destination = document.querySelector('section:nth-of-type(2)');
 
         target.addEventListener('click', () => {
+            console.log('Clicked ', target);
             gsap.to(window.document.documentElement, {
                 duration: 1,
                 ease: 'power2.inOut',
                 scrollTo: destination.offsetTop,
             });
-        });
-    }
-
-    /*--------------------------------------------------
-  15. Video
----------------------------------------------------*/
-
-    function videoBtn() {
-        GLightbox({
-            autoplayVideos: false,
-            touchNavigation: false,
         });
     }
 

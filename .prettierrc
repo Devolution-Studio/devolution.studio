@@ -8,7 +8,7 @@
     "endOfLine": "lf",
     "overrides": [
         {
-            "files": "src/**/*.html",
+            "files": "src/**/*.hbs",
             "options": {
                 "printWidth": 140
             }
