@@ -4,21 +4,29 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Devolution Studio' });
+    res.render('index', { year: new Date().getFullYear() });
 });
 
 router.get('/contact/', function (req, res, next) {
-    res.render('contact', { title: 'Devolution Studio' });
+    res.render('contact');
 });
 
-router.post('/contact/send/', function (req, res, next) {
+router.post('/contact/send/', async function (req, res, next) {
+    let statusCode = 200;
     console.log('Send contact');
     console.log(req.body.name);
 
-    sendContactMessage(req.body.name, req.body.email, req.body.message);
+    if (
+        !(await sendContactMessage(
+            req.body.name,
+            req.body.email,
+            req.body.message
+        ))
+    ) {
+        statusCode = 500;
+    }
 
-    res.status = 200;
-    res.send('');
+    res.send('', statusCode);
 });
 
 module.exports = router;
