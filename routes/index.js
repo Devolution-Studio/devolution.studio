@@ -2,12 +2,6 @@ var express = require('express');
 var sendContactMessage = require('../contact');
 var router = express.Router();
 
-// catch 404 and forward to error handler
-app.get('*', function (req, res) {
-    res.status(req.status || 404);
-    res.render('404');
-});
-
 /* index page. */
 router.get('/', function (req, res, next) {
     res.render('index', { year: new Date().getFullYear() });
