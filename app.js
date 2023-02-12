@@ -1,30 +1,31 @@
 require('dotenv').config();
+const path = require('path');
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const expressHandlebars = require('express-handlebars');
+const indexRouter = require('./routes/index');
 
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-
-var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
-
-app.use(logger('dev'));
+// Express setup
+const app = express();
+app.use('/', indexRouter);
+app.use(logger(process.env.ENV));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+// Handlebars setup
+expressHandlebars.create({});
+app.engine(
+    'handlebars',
+    expressHandlebars.engine({
+        layoutsDir: __dirname + '/views/layouts/',
+        partialsDir: __dirname + '/views/partials/',
+    })
+);
 
-// catch 404 and forward to error handler
-app.get('*', function (req, res) {
-    res.status(req.status || 404);
-    res.render('404');
-});
+app.set('view engine', 'handlebars');
+app.set('views', './views');
 
 module.exports = app;

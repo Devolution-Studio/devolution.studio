@@ -11,9 +11,9 @@ var sendContactMessage = async function (name, email, message) {
 
     var mailOptions = {
         from: email,
-        to: 'teo.conan.tirault@gmail.com',
-        subject: name,
-        text: message,
+        to: process.env.MAIL_USER,
+        subject: email + ' : ' + name,
+        text: message + '\n\nFrom ' + email,
     };
 
     try {
