@@ -1,0 +1,102 @@
+<!-- section start -->
+<section class='layout-pt-xl layout-pb-sm'>
+    <!-- container start -->
+    <div data-anim-wrap class='container'>
+        <!-- row start -->
+        <div class='row justify-content-center'>
+            <div class='col-xl-9'>
+                <div
+                    data-anim-child='slide-up delay-1'
+                    class='sectionHeading -md'
+                >
+                    <h1 class='sectionHeading__title'>
+                        Un projet en tête ?
+                    </h1>
+                    <p class='text-black leading-md mt-24'>
+                        Remplissez le formulaire ci-dessous ou
+                        <a
+                            href='mailto:contact@devolution.studio'
+                            class='fw-700'
+                        >
+                            envoyez-nous un mail
+                        </a>
+                        .
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- row end -->
+
+        <!-- row start -->
+        <div
+            data-anim-child='slide-up delay-1'
+            class='row justify-content-center layout-pt-sm'
+        >
+            <div class='col-xl-9'>
+                <div class='contact-form -type-1'>
+                    <form
+                        class='row x-gap-32 y-gap-32 js-ajax-form'
+                        method='POST'
+                        action='/contact/send'
+                        data-message-success='Your message has been sent! We will reply you as soon as possible.'
+                        data-message-error="Something went wrong. Please contact us directly at <a href='hello@Devolution Studio.com'>hello@Devolution Studio.com</a>."
+                    >
+                        <div class='col-12'>
+                            <label class='js-input-group'>
+                                Nom / Prénom
+                                <input
+                                    type='text'
+                                    name='name'
+                                    data-required
+                                    placeholder='Votre nom / prénom'
+                                />
+                                <span class='form__error'></span>
+                            </label>
+                        </div>
+
+                        <div class='col-12'>
+                            <label class='js-input-group'>
+                                Email
+                                <input
+                                    type='text'
+                                    name='email'
+                                    data-required
+                                    placeholder='Votre email'
+                                />
+                                <span class='form__error'></span>
+                            </label>
+                        </div>
+
+                        <div class='col-12'>
+                            <label class='js-input-group'>
+                                Message
+                                <textarea
+                                    name='message'
+                                    rows='1'
+                                    placeholder='Votre message'
+                                ></textarea>
+                                <span class='form__error'></span>
+                            </label>
+                        </div>
+
+                        <div class='col-12 ajax-form-alert js-ajax-form-alert'>
+                            <div class='ajax-form-alert__content'></div>
+                        </div>
+
+                        <div class='col-12'>
+                            <button
+                                type='submit'
+                                class='button -md -black text-white'
+                            >
+                                Envoyer
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- row end -->
+    </div>
+    <!-- container end -->
+</section>
+<!-- section end -->
