@@ -1,3 +1,5 @@
+const env_PROD = 'prod';
+
 require('dotenv').config();
 const path = require('path');
 const express = require('express');
@@ -9,11 +11,22 @@ const indexRouter = require('./routes/index');
 // Express setup
 const app = express();
 app.use('/', indexRouter);
-app.use(logger(process.env.ENV));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+if (process.env.ENV == env_PROD) {
+    app.use(
+        logger('combined', {
+            skip: function (req, res) {
+                return res.statusCode < 400;
+            },
+        })
+    );
+} else {
+    app.use(logger(process.env.ENV));
+}
 
 // Handlebars setup
 expressHandlebars.create({});
