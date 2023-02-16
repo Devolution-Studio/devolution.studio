@@ -1,4 +1,5 @@
 var express = require('express');
+const bodyParser = require('body-parser');
 var sendContactMessage = require('../contact');
 var router = express.Router();
 
@@ -6,6 +7,10 @@ function log(req, page) {
     const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     console.log(`> Get page ${page} : ${ip}`);
 }
+
+// Set body parsing for router
+router.use(bodyParser.json());
+router.use(express.urlencoded({ extended: true }));
 
 /* index page. */
 router.get('/', function (req, res, next) {

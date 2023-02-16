@@ -1,6 +1,10 @@
 const nodemailer = require('nodemailer');
 
 var sendContactMessage = async function (name, email, message) {
+    if (name == undefined || email == undefined || message == undefined) {
+        return false;
+    }
+
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -11,7 +15,7 @@ var sendContactMessage = async function (name, email, message) {
 
     var mailOptions = {
         from: email,
-        to: process.env.MAIL_USER,
+        to: process.env.MAIL_USER_TO,
         subject: email + ' : ' + name,
         text: message + '\n\nFrom ' + email,
     };
