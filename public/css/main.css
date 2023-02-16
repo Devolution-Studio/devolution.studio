@@ -130,6 +130,16 @@
     --font-secondary: 'Manrope', sans-serif;
 }
 
+@font-face {
+    font-family: 'Chillax-Medium';
+    src: url('/fonts/Chillax-Medium.woff2') format('woff2'),
+        url('/fonts/Chillax-Medium.woff') format('woff'),
+        url('/fonts/Chillax-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
 /*--------------------------------------------------
 	02. Reveal animations
 ---------------------------------------------------*/
@@ -1535,14 +1545,14 @@ h6 {
     display: flex;
     align-items: center;
     z-index: 10;
-    font-size: 1.875rem;
+    font-size: 1.825rem;
     line-height: 1;
-    font-weight: 700;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.02em;
+    font-family: 'Chillax-Medium';
 }
 
 .footer.-type-1 .footer__logo:hover {
-    color: initial;
+    color: var(--accent-color);
 }
 
 .footer.-type-1 .footer__logo img {
@@ -2410,10 +2420,10 @@ h6 {
 .header__logo {
     position: relative;
     z-index: 1;
-    font-weight: 600;
-    font-size: 1.625rem;
+    font-size: 1.825rem;
     line-height: 1;
     letter-spacing: -0.02em;
+    font-family: 'Chillax-Medium';
 }
 
 .header__logo a {
@@ -4421,6 +4431,7 @@ body.is-cursor-active * {
 
 .sliderMain.-type-3 .slider__title .split__line {
     padding-bottom: 0.25rem;
+    text-align: left !important;
 }
 
 .sliderMain.-type-3 .slider__title.-line-bg-white {
