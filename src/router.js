@@ -1,36 +1,40 @@
-var express = require('express');
+const express = require('express');
 const bodyParser = require('body-parser');
-var sendContactMessage = require('../contact');
-var router = express.Router();
+const router = express.Router();
+const utils = require('./utils');
 
-function log(req, page) {
-    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
-    console.log(`> Get page ${page} : ${ip}`);
-}
-
-// Set body parsing for router
+/*
+ * Set body parsing for router
+ */
 router.use(bodyParser.json());
 router.use(express.urlencoded({ extended: true }));
 
-/* index page. */
+/*
+ * Index page
+ */
 router.get('/', function (req, res, next) {
-    log(req, 'index');
+    utils.log(req, 'index');
     res.render('index', { year: new Date().getFullYear() });
 });
 
+/*
+ * Contact page
+ */
 router.get('/contact/', function (req, res, next) {
-    log(req, 'contact');
+    utils.log(req, 'contact');
     res.render('contact', { year: new Date().getFullYear() });
 });
 
-/* post send mail */
+/*
+ * Send mail
+ */
 router.post('/contact/send/', async function (req, res, next) {
-    log(req, 'contact/send');
+    utils.log(req, 'contact/send');
 
     let statusCode = 200;
 
     if (
-        !(await sendContactMessage(
+        !(await utils.sendContactMessage(
             req.body.name,
             req.body.email,
             req.body.message

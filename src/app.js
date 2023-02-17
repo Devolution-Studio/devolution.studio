@@ -1,22 +1,29 @@
-const env_PROD = 'prod';
+#!/usr/bin/env node
 
+/**
+ * Module dependencies.
+ */
 require('dotenv').config();
 const path = require('path');
+const utils = require('./utils');
+const router = require('./router');
+
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const expressHandlebars = require('express-handlebars');
-const indexRouter = require('./routes/index');
 
-// Express setup
+/*
+ * Express setup
+ */
 const app = express();
-app.use('/', indexRouter);
+app.use('/', router);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(utils.rootDir, 'public')));
 
-if (process.env.ENV == env_PROD) {
+if (process.env.ENV == utils.env_PROD) {
     app.use(
         logger('combined', {
             skip: function (req, res) {
@@ -28,23 +35,19 @@ if (process.env.ENV == env_PROD) {
     app.use(logger(process.env.ENV));
 }
 
-// Handlebars setup
+/*
+ * Handlebars setup
+ */
 expressHandlebars.create({});
 app.engine(
     'handlebars',
     expressHandlebars.engine({
-        layoutsDir: __dirname + '/views/layouts/',
-        partialsDir: __dirname + '/views/partials/',
+        layoutsDir: utils.rootDir + '/views/layouts/',
+        partialsDir: utils.rootDir + '/views/partials/',
     })
 );
 
 app.set('view engine', 'handlebars');
-app.set('views', './views');
-
-// catch 404 and forward to error handler
-app.get('*', function (req, res) {
-    res.status(req.status || 404);
-    res.render('404');
-});
+app.set('views', utils.rootDir + '/views');
 
 module.exports = app;
