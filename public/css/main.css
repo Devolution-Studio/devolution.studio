@@ -893,7 +893,6 @@ button {
     font-size: 0.9375rem;
     line-height: 1;
     font-weight: 500;
-    text-transform: capitalize;
     letter-spacing: 0.03em;
 }
 
@@ -1923,6 +1922,7 @@ h6 {
 .blogPost.-single .blogPost__content > ul,
 .blogPost.-single .blogPost__content > ol {
     margin: 1.25rem 0;
+    padding-left: 2rem;
 }
 
 .blogPost.-single .blogPost__content ol {
@@ -1935,6 +1935,7 @@ h6 {
 
 .blogPost.-single .blogPost__content li {
     padding: 0.375rem 0;
+    list-style: initial;
 }
 
 .blogPost.-single .blogPost__content li ul,
@@ -3645,7 +3646,7 @@ h6 {
 	26. Preloader
 ---------------------------------------------------*/
 body.preloader-visible .preloader__bg {
-    transform: scaleY(1);
+    transform: scaleY(1.1);
 }
 
 body.preloader-visible .preloader__progress {

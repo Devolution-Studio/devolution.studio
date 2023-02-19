@@ -1,0 +1,1413 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Conditions générales de ventes</title>
+        <style>
+            /* cspell:disable-file */
+            /* webkit printing magic: print all background colors */
+            html {
+                -webkit-print-color-adjust: exact;
+            }
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+            }
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            @media only screen {
+                body {
+                    margin: 2em auto;
+                    max-width: 900px;
+                    color: rgb(55, 53, 47);
+                }
+            }
+
+            body {
+                line-height: 1.5;
+                white-space: pre-wrap;
+            }
+
+            a,
+            a.visited {
+                color: inherit;
+                text-decoration: underline;
+            }
+
+            .pdf-relative-link-path {
+                font-size: 80%;
+                color: #444;
+            }
+
+            h1,
+            h2,
+            h3 {
+                letter-spacing: -0.01em;
+                line-height: 1.2;
+                font-weight: 600;
+                margin-bottom: 0;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 0.75em;
+            }
+
+            h1 {
+                font-size: 1.875rem;
+                margin-top: 1.875rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+                margin-top: 1.25rem;
+            }
+
+            .source {
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                padding: 1.5em;
+                word-break: break-all;
+            }
+
+            .callout {
+                border-radius: 3px;
+                padding: 1rem;
+            }
+
+            figure {
+                margin: 1.25em 0;
+                page-break-inside: avoid;
+            }
+
+            figcaption {
+                opacity: 0.5;
+                font-size: 85%;
+                margin-top: 0.5em;
+            }
+
+            mark {
+                background-color: transparent;
+            }
+
+            .indented {
+                padding-left: 1.5em;
+            }
+
+            hr {
+                background: transparent;
+                display: block;
+                width: 100%;
+                height: 1px;
+                visibility: visible;
+                border: none;
+                border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            @media only print {
+                img {
+                    max-height: 100vh;
+                    object-fit: contain;
+                }
+            }
+
+            @page {
+                margin: 1in;
+            }
+
+            .collection-content {
+                font-size: 0.875rem;
+            }
+
+            .column-list {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .column {
+                padding: 0 1em;
+            }
+
+            .column:first-child {
+                padding-left: 0;
+            }
+
+            .column:last-child {
+                padding-right: 0;
+            }
+
+            .table_of_contents-item {
+                display: block;
+                font-size: 0.875rem;
+                line-height: 1.3;
+                padding: 0.125rem;
+            }
+
+            .table_of_contents-indent-1 {
+                margin-left: 1.5rem;
+            }
+
+            .table_of_contents-indent-2 {
+                margin-left: 3rem;
+            }
+
+            .table_of_contents-indent-3 {
+                margin-left: 4.5rem;
+            }
+
+            .table_of_contents-link {
+                text-decoration: none;
+                opacity: 0.7;
+                border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+            }
+
+            table,
+            th,
+            td {
+                border: 1px solid rgba(55, 53, 47, 0.09);
+                border-collapse: collapse;
+            }
+
+            table {
+                border-left: none;
+                border-right: none;
+            }
+
+            th,
+            td {
+                font-weight: normal;
+                padding: 0.25em 0.5em;
+                line-height: 1.5;
+                min-height: 1.5em;
+                text-align: left;
+            }
+
+            th {
+                color: rgba(55, 53, 47, 0.6);
+            }
+
+            ol,
+            ul {
+                margin: 0;
+                margin-block-start: 0.6em;
+                margin-block-end: 0.6em;
+            }
+
+            li > ol:first-child,
+            li > ul:first-child {
+                margin-block-start: 0.6em;
+            }
+
+            ul > li {
+                list-style: disc;
+            }
+
+            ul.to-do-list {
+                text-indent: -1.7em;
+            }
+
+            ul.to-do-list > li {
+                list-style: none;
+            }
+
+            .to-do-children-checked {
+                text-decoration: line-through;
+                opacity: 0.375;
+            }
+
+            ul.toggle > li {
+                list-style: none;
+            }
+
+            ul {
+                padding-inline-start: 1.7em;
+            }
+
+            ul > li {
+                padding-left: 0.1em;
+            }
+
+            ol {
+                padding-inline-start: 1.6em;
+            }
+
+            ol > li {
+                padding-left: 0.2em;
+            }
+
+            .mono ol {
+                padding-inline-start: 2em;
+            }
+
+            .mono ol > li {
+                text-indent: -0.4em;
+            }
+
+            .toggle {
+                padding-inline-start: 0em;
+                list-style-type: none;
+            }
+
+            /* Indent toggle children */
+            .toggle > li > details {
+                padding-left: 1.7em;
+            }
+
+            .toggle > li > details > summary {
+                margin-left: -1.1em;
+            }
+
+            .selected-value {
+                display: inline-block;
+                padding: 0 0.5em;
+                background: rgba(206, 205, 202, 0.5);
+                border-radius: 3px;
+                margin-right: 0.5em;
+                margin-top: 0.3em;
+                margin-bottom: 0.3em;
+                white-space: nowrap;
+            }
+
+            .collection-title {
+                display: inline-block;
+                margin-right: 1em;
+            }
+
+            .simple-table {
+                margin-top: 1em;
+                font-size: 0.875rem;
+                empty-cells: show;
+            }
+            .simple-table td {
+                height: 29px;
+                min-width: 120px;
+            }
+
+            .simple-table th {
+                height: 29px;
+                min-width: 120px;
+            }
+
+            .simple-table-header-color {
+                background: rgb(247, 246, 243);
+                color: black;
+            }
+            .simple-table-header {
+                font-weight: 500;
+            }
+
+            time {
+                opacity: 0.5;
+            }
+
+            .icon {
+                display: inline-block;
+                max-width: 1.2em;
+                max-height: 1.2em;
+                text-decoration: none;
+                vertical-align: text-bottom;
+                margin-right: 0.5em;
+            }
+
+            img.icon {
+                border-radius: 3px;
+            }
+
+            .user-icon {
+                width: 1.5em;
+                height: 1.5em;
+                border-radius: 100%;
+                margin-right: 0.5rem;
+            }
+
+            .user-icon-inner {
+                font-size: 0.8em;
+            }
+
+            .text-icon {
+                border: 1px solid #000;
+                text-align: center;
+            }
+
+            .page-cover-image {
+                display: block;
+                object-fit: cover;
+                width: 100%;
+                max-height: 30vh;
+            }
+
+            .page-header-icon {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+
+            .page-header-icon-with-cover {
+                margin-top: -0.72em;
+                margin-left: 0.07em;
+            }
+
+            .page-header-icon img {
+                border-radius: 3px;
+            }
+
+            .link-to-page {
+                margin: 1em 0;
+                padding: 0;
+                border: none;
+                font-weight: 500;
+            }
+
+            p > .user {
+                opacity: 0.5;
+            }
+
+            td > .user,
+            td > time {
+                white-space: nowrap;
+            }
+
+            input[type='checkbox'] {
+                transform: scale(1.5);
+                margin-right: 0.6em;
+                vertical-align: middle;
+            }
+
+            p {
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+            }
+
+            .image {
+                border: none;
+                margin: 1.5em 0;
+                padding: 0;
+                border-radius: 0;
+                text-align: center;
+            }
+
+            .code,
+            code {
+                background: rgba(135, 131, 120, 0.15);
+                border-radius: 3px;
+                padding: 0.2em 0.4em;
+                border-radius: 3px;
+                font-size: 85%;
+                tab-size: 2;
+            }
+
+            code {
+                color: #eb5757;
+            }
+
+            .code {
+                padding: 1.5em 1em;
+            }
+
+            .code-wrap {
+                white-space: pre-wrap;
+                word-break: break-all;
+            }
+
+            .code > code {
+                background: none;
+                padding: 0;
+                font-size: 100%;
+                color: inherit;
+            }
+
+            blockquote {
+                font-size: 1.25em;
+                margin: 1em 0;
+                padding-left: 1em;
+                border-left: 3px solid rgb(55, 53, 47);
+            }
+
+            .bookmark {
+                text-decoration: none;
+                max-height: 8em;
+                padding: 0;
+                display: flex;
+                width: 100%;
+                align-items: stretch;
+            }
+
+            .bookmark-title {
+                font-size: 0.85em;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                height: 1.75em;
+                white-space: nowrap;
+            }
+
+            .bookmark-text {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .bookmark-info {
+                flex: 4 1 180px;
+                padding: 12px 14px 14px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .bookmark-image {
+                width: 33%;
+                flex: 1 1 180px;
+                display: block;
+                position: relative;
+                object-fit: cover;
+                border-radius: 1px;
+            }
+
+            .bookmark-description {
+                color: rgba(55, 53, 47, 0.6);
+                font-size: 0.75em;
+                overflow: hidden;
+                max-height: 4.5em;
+                word-break: break-word;
+            }
+
+            .bookmark-href {
+                font-size: 0.75em;
+                margin-top: 0.25em;
+            }
+
+            .sans {
+                font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,
+                    'Segoe UI', Helvetica, 'Apple Color Emoji', Arial,
+                    sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+            }
+            .code {
+                font-family: 'SFMono-Regular', Menlo, Consolas, 'PT Mono',
+                    'Liberation Mono', Courier, monospace;
+            }
+            .serif {
+                font-family: Lyon-Text, Georgia, ui-serif, serif;
+            }
+            .mono {
+                font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+            }
+            .pdf .sans {
+                font-family: Inter, ui-sans-serif, -apple-system,
+                    BlinkMacSystemFont, 'Segoe UI', Helvetica,
+                    'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji',
+                    'Segoe UI Symbol', 'Twemoji', 'Noto Color Emoji',
+                    'Noto Sans CJK JP';
+            }
+            .pdf:lang(zh-CN) .sans {
+                font-family: Inter, ui-sans-serif, -apple-system,
+                    BlinkMacSystemFont, 'Segoe UI', Helvetica,
+                    'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji',
+                    'Segoe UI Symbol', 'Twemoji', 'Noto Color Emoji',
+                    'Noto Sans CJK SC';
+            }
+            .pdf:lang(zh-TW) .sans {
+                font-family: Inter, ui-sans-serif, -apple-system,
+                    BlinkMacSystemFont, 'Segoe UI', Helvetica,
+                    'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji',
+                    'Segoe UI Symbol', 'Twemoji', 'Noto Color Emoji',
+                    'Noto Sans CJK TC';
+            }
+            .pdf:lang(ko-KR) .sans {
+                font-family: Inter, ui-sans-serif, -apple-system,
+                    BlinkMacSystemFont, 'Segoe UI', Helvetica,
+                    'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji',
+                    'Segoe UI Symbol', 'Twemoji', 'Noto Color Emoji',
+                    'Noto Sans CJK KR';
+            }
+            .pdf .code {
+                font-family: Source Code Pro, 'SFMono-Regular', Menlo, Consolas,
+                    'PT Mono', 'Liberation Mono', Courier, monospace, 'Twemoji',
+                    'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+            }
+            .pdf:lang(zh-CN) .code {
+                font-family: Source Code Pro, 'SFMono-Regular', Menlo, Consolas,
+                    'PT Mono', 'Liberation Mono', Courier, monospace, 'Twemoji',
+                    'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+            }
+            .pdf:lang(zh-TW) .code {
+                font-family: Source Code Pro, 'SFMono-Regular', Menlo, Consolas,
+                    'PT Mono', 'Liberation Mono', Courier, monospace, 'Twemoji',
+                    'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+            }
+            .pdf:lang(ko-KR) .code {
+                font-family: Source Code Pro, 'SFMono-Regular', Menlo, Consolas,
+                    'PT Mono', 'Liberation Mono', Courier, monospace, 'Twemoji',
+                    'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+            }
+            .pdf .serif {
+                font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif,
+                    'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+            }
+            .pdf:lang(zh-CN) .serif {
+                font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif,
+                    'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+            }
+            .pdf:lang(zh-TW) .serif {
+                font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif,
+                    'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+            }
+            .pdf:lang(ko-KR) .serif {
+                font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif,
+                    'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+            }
+            .pdf .mono {
+                font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier,
+                    monospace, 'Twemoji', 'Noto Color Emoji',
+                    'Noto Sans Mono CJK JP';
+            }
+            .pdf:lang(zh-CN) .mono {
+                font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier,
+                    monospace, 'Twemoji', 'Noto Color Emoji',
+                    'Noto Sans Mono CJK SC';
+            }
+            .pdf:lang(zh-TW) .mono {
+                font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier,
+                    monospace, 'Twemoji', 'Noto Color Emoji',
+                    'Noto Sans Mono CJK TC';
+            }
+            .pdf:lang(ko-KR) .mono {
+                font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier,
+                    monospace, 'Twemoji', 'Noto Color Emoji',
+                    'Noto Sans Mono CJK KR';
+            }
+            .highlight-default {
+                color: rgba(55, 53, 47, 1);
+            }
+            .highlight-gray {
+                color: rgba(120, 119, 116, 1);
+                fill: rgba(120, 119, 116, 1);
+            }
+            .highlight-brown {
+                color: rgba(159, 107, 83, 1);
+                fill: rgba(159, 107, 83, 1);
+            }
+            .highlight-orange {
+                color: rgba(217, 115, 13, 1);
+                fill: rgba(217, 115, 13, 1);
+            }
+            .highlight-yellow {
+                color: rgba(203, 145, 47, 1);
+                fill: rgba(203, 145, 47, 1);
+            }
+            .highlight-teal {
+                color: rgba(68, 131, 97, 1);
+                fill: rgba(68, 131, 97, 1);
+            }
+            .highlight-blue {
+                color: rgba(51, 126, 169, 1);
+                fill: rgba(51, 126, 169, 1);
+            }
+            .highlight-purple {
+                color: rgba(144, 101, 176, 1);
+                fill: rgba(144, 101, 176, 1);
+            }
+            .highlight-pink {
+                color: rgba(193, 76, 138, 1);
+                fill: rgba(193, 76, 138, 1);
+            }
+            .highlight-red {
+                color: rgba(212, 76, 71, 1);
+                fill: rgba(212, 76, 71, 1);
+            }
+            .highlight-gray_background {
+                background: rgba(241, 241, 239, 1);
+            }
+            .highlight-brown_background {
+                background: rgba(244, 238, 238, 1);
+            }
+            .highlight-orange_background {
+                background: rgba(251, 236, 221, 1);
+            }
+            .highlight-yellow_background {
+                background: rgba(251, 243, 219, 1);
+            }
+            .highlight-teal_background {
+                background: rgba(237, 243, 236, 1);
+            }
+            .highlight-blue_background {
+                background: rgba(231, 243, 248, 1);
+            }
+            .highlight-purple_background {
+                background: rgba(244, 240, 247, 0.8);
+            }
+            .highlight-pink_background {
+                background: rgba(249, 238, 243, 0.8);
+            }
+            .highlight-red_background {
+                background: rgba(253, 235, 236, 1);
+            }
+            .block-color-default {
+                color: inherit;
+                fill: inherit;
+            }
+            .block-color-gray {
+                color: rgba(120, 119, 116, 1);
+                fill: rgba(120, 119, 116, 1);
+            }
+            .block-color-brown {
+                color: rgba(159, 107, 83, 1);
+                fill: rgba(159, 107, 83, 1);
+            }
+            .block-color-orange {
+                color: rgba(217, 115, 13, 1);
+                fill: rgba(217, 115, 13, 1);
+            }
+            .block-color-yellow {
+                color: rgba(203, 145, 47, 1);
+                fill: rgba(203, 145, 47, 1);
+            }
+            .block-color-teal {
+                color: rgba(68, 131, 97, 1);
+                fill: rgba(68, 131, 97, 1);
+            }
+            .block-color-blue {
+                color: rgba(51, 126, 169, 1);
+                fill: rgba(51, 126, 169, 1);
+            }
+            .block-color-purple {
+                color: rgba(144, 101, 176, 1);
+                fill: rgba(144, 101, 176, 1);
+            }
+            .block-color-pink {
+                color: rgba(193, 76, 138, 1);
+                fill: rgba(193, 76, 138, 1);
+            }
+            .block-color-red {
+                color: rgba(212, 76, 71, 1);
+                fill: rgba(212, 76, 71, 1);
+            }
+            .block-color-gray_background {
+                background: rgba(241, 241, 239, 1);
+            }
+            .block-color-brown_background {
+                background: rgba(244, 238, 238, 1);
+            }
+            .block-color-orange_background {
+                background: rgba(251, 236, 221, 1);
+            }
+            .block-color-yellow_background {
+                background: rgba(251, 243, 219, 1);
+            }
+            .block-color-teal_background {
+                background: rgba(237, 243, 236, 1);
+            }
+            .block-color-blue_background {
+                background: rgba(231, 243, 248, 1);
+            }
+            .block-color-purple_background {
+                background: rgba(244, 240, 247, 0.8);
+            }
+            .block-color-pink_background {
+                background: rgba(249, 238, 243, 0.8);
+            }
+            .block-color-red_background {
+                background: rgba(253, 235, 236, 1);
+            }
+            .select-value-color-pink {
+                background-color: rgba(245, 224, 233, 1);
+            }
+            .select-value-color-purple {
+                background-color: rgba(232, 222, 238, 1);
+            }
+            .select-value-color-green {
+                background-color: rgba(219, 237, 219, 1);
+            }
+            .select-value-color-gray {
+                background-color: rgba(227, 226, 224, 1);
+            }
+            .select-value-color-opaquegray {
+                background-color: rgba(255, 255, 255, 0.0375);
+            }
+            .select-value-color-orange {
+                background-color: rgba(250, 222, 201, 1);
+            }
+            .select-value-color-brown {
+                background-color: rgba(238, 224, 218, 1);
+            }
+            .select-value-color-red {
+                background-color: rgba(255, 226, 221, 1);
+            }
+            .select-value-color-yellow {
+                background-color: rgba(253, 236, 200, 1);
+            }
+            .select-value-color-blue {
+                background-color: rgba(211, 229, 239, 1);
+            }
+
+            .checkbox {
+                display: inline-flex;
+                vertical-align: text-bottom;
+                width: 16;
+                height: 16;
+                background-size: 16px;
+                margin-left: 2px;
+                margin-right: 5px;
+            }
+
+            .checkbox-on {
+                background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E');
+            }
+
+            .checkbox-off {
+                background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E');
+            }
+        </style>
+    </head>
+    <body>
+        <article id="b2852dc5-b485-4518-819f-cadb9208575a" class="page sans">
+            <header>
+                <h1 class="page-title">Conditions générales de ventes</h1>
+            </header>
+            <div class="page-body">
+                <hr id="56a76f95-0a5c-49a2-8309-73ef26dca9f6" />
+                <h1 id="d3460f80-7853-4ad3-8ee2-36088f24c488" class="">
+                    Services de prestation
+                </h1>
+                <hr id="eb22a30d-6ce8-4206-9188-e4a98e140dc6" />
+                <h2 id="f49fbf7f-cdde-4ef1-a0c3-54be42393397" class="">
+                    Rédaction de cahier des charges
+                </h2>
+                <p id="a630f36d-103c-4a07-be99-bf43dc047a4a" class="">
+                    La réalisation d&#x27;un cahier des charges est une étape
+                    importante dans le processus de tout projet car elle permet
+                    d&#x27;évaluer avec précision le temps de travail nécessaire
+                    à sa mise en place.
+                </p>
+                <p id="9a0fc799-8781-4826-be20-7599e2ebba1b" class="">
+                    En fonction de l&#x27;ampleur de votre projet, la
+                    réalisation d&#x27;un cahier des charges peut être requise
+                    pour établir un devis adapté à vos besoins.
+                </p>
+                <p id="af7d40f7-a237-4585-b4c5-18fa3ed7f6f4" class="">
+                    Nous nous engageons à vous accompagner dans cette démarche
+                    en vous fournissant une prestation de qualité, qui répondra
+                    à vos attentes et à vos exigences en matière de rédaction de
+                    spécifications techniques et fonctionnelles.
+                </p>
+                <h2 id="df77aa38-f045-4f3b-8d90-fd540f75840a" class="">
+                    Ingénierie logicielle
+                </h2>
+                <p id="b8499905-5ad7-439f-80b6-2cd025dd7ce5" class="">
+                    Cette prestation s’invite dans l’idée de réflexion avec le
+                    client d’une solution technique pour un problème donné.
+                </p>
+                <blockquote id="a4ea543c-461c-4d36-be66-38fd7dd652b6" class="">
+                    <em
+                        ><em
+                            ><em
+                                ><em
+                                    ><em
+                                        ><em
+                                            ><em
+                                                ><em
+                                                    ><em
+                                                        ><em
+                                                            ><em
+                                                                ><em
+                                                                    ><em
+                                                                        ><em
+                                                                            ><em
+                                                                                ><em
+                                                                                    ><em
+                                                                                        ><em
+                                                                                            ><em
+                                                                                                ><em
+                                                                                                    ><em
+                                                                                                        ><em
+                                                                                                            ><em
+                                                                                                                ><em
+                                                                                                                    ><em
+                                                                                                                        ><em
+                                                                                                                            ><em
+                                                                                                                                ><em
+                                                                                                                                    ><em
+                                                                                                                                        ><em
+                                                                                                                                            ><em
+                                                                                                                                                ><em
+                                                                                                                                                    ><em
+                                                                                                                                                        ><em
+                                                                                                                                                            ><em
+                                                                                                                                                                ><em
+                                                                                                                                                                    ><em
+                                                                                                                                                                        ><em
+                                                                                                                                                                            ><em
+                                                                                                                                                                                ><em
+                                                                                                                                                                                    ><em
+                                                                                                                                                                                        ><em
+                                                                                                                                                                                            ><em
+                                                                                                                                                                                                ><em
+                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                            ><em
+                                                                                                                                                                                                                ><em
+                                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                                            ><em
+                                                                                                                                                                                                                                ><em
+                                                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                                                            ><em
+                                                                                                                                                                                                                                                ><em
+                                                                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                                                                            ><em
+                                                                                                                                                                                                                                                                ><em
+                                                                                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                                                                                            ><em
+                                                                                                                                                                                                                                                                                ><em
+                                                                                                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                                                                                                            ><em
+                                                                                                                                                                                                                                                                                                ><em
+                                                                                                                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                                                                                                                            ><em
+                                                                                                                                                                                                                                                                                                                ><em
+                                                                                                                                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                                                                                                                                            ><em
+                                                                                                                                                                                                                                                                                                                                ><em
+                                                                                                                                                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                                                                                                                                                            ><em
+                                                                                                                                                                                                                                                                                                                                                ><em
+                                                                                                                                                                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                                                                                                                                                                            ><em
+                                                                                                                                                                                                                                                                                                                                                                ><em
+                                                                                                                                                                                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                                                                                                                                                                                            ><em
+                                                                                                                                                                                                                                                                                                                                                                                ><em
+                                                                                                                                                                                                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                                                                                                                                                                                                            ><em
+                                                                                                                                                                                                                                                                                                                                                                                                ><em
+                                                                                                                                                                                                                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                                                                                                                                                                                                                            ><em
+                                                                                                                                                                                                                                                                                                                                                                                                                ><em
+                                                                                                                                                                                                                                                                                                                                                                                                                    ><em
+                                                                                                                                                                                                                                                                                                                                                                                                                        ><em
+                                                                                                                                                                                                                                                                                                                                                                                                                            >Par
+                                                                                                                                                                                                                                                                                                                                                                                                                            exemple,
+                                                                                                                                                                                                                                                                                                                                                                                                                            dans
+                                                                                                                                                                                                                                                                                                                                                                                                                            le
+                                                                                                                                                                                                                                                                                                                                                                                                                            cas
+                                                                                                                                                                                                                                                                                                                                                                                                                            d’un
+                                                                                                                                                                                                                                                                                                                                                                                                                            soucis
+                                                                                                                                                                                                                                                                                                                                                                                                                            de
+                                                                                                                                                                                                                                                                                                                                                                                                                            stockage
+                                                                                                                                                                                                                                                                                                                                                                                                                            de
+                                                                                                                                                                                                                                                                                                                                                                                                                            données
+                                                                                                                                                                                                                                                                                                                                                                                                                            client,
+                                                                                                                                                                                                                                                                                                                                                                                                                            une
+                                                                                                                                                                                                                                                                                                                                                                                                                            solution
+                                                                                                                                                                                                                                                                                                                                                                                                                            technique
+                                                                                                                                                                                                                                                                                                                                                                                                                            pourra
+                                                                                                                                                                                                                                                                                                                                                                                                                            être
+                                                                                                                                                                                                                                                                                                                                                                                                                            proposé
+                                                                                                                                                                                                                                                                                                                                                                                                                            pour
+                                                                                                                                                                                                                                                                                                                                                                                                                            répondre
+                                                                                                                                                                                                                                                                                                                                                                                                                            à
+                                                                                                                                                                                                                                                                                                                                                                                                                            ce
+                                                                                                                                                                                                                                                                                                                                                                                                                            problème</em
+                                                                                                                                                                                                                                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                                                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                                                                                                                                                                                                                                ></em
+                                                                                                                                                                                                                                                                                                                                                                                                            ></em
+                                                                                                                                                                                                                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                                                                                                                                                                                                                ></em
+                                                                                                                                                                                                                                                                                                                                                                                            ></em
+                                                                                                                                                                                                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                                                                                                                                                                                                ></em
+                                                                                                                                                                                                                                                                                                                                                                            ></em
+                                                                                                                                                                                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                                                                                                                                                                                ></em
+                                                                                                                                                                                                                                                                                                                                                            ></em
+                                                                                                                                                                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                                                                                                                                                                ></em
+                                                                                                                                                                                                                                                                                                                                            ></em
+                                                                                                                                                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                                                                                                                                                ></em
+                                                                                                                                                                                                                                                                                                                            ></em
+                                                                                                                                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                                                                                                                                ></em
+                                                                                                                                                                                                                                                                                                            ></em
+                                                                                                                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                                                                                                                ></em
+                                                                                                                                                                                                                                                                                            ></em
+                                                                                                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                                                                                                ></em
+                                                                                                                                                                                                                                                                            ></em
+                                                                                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                                                                                ></em
+                                                                                                                                                                                                                                                            ></em
+                                                                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                                                                ></em
+                                                                                                                                                                                                                                            ></em
+                                                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                                                ></em
+                                                                                                                                                                                                                            ></em
+                                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                                ></em
+                                                                                                                                                                                                            ></em
+                                                                                                                                                                                                        ></em
+                                                                                                                                                                                                    ></em
+                                                                                                                                                                                                ></em
+                                                                                                                                                                                            ></em
+                                                                                                                                                                                        ></em
+                                                                                                                                                                                    ></em
+                                                                                                                                                                                ></em
+                                                                                                                                                                            ></em
+                                                                                                                                                                        ></em
+                                                                                                                                                                    ></em
+                                                                                                                                                                ></em
+                                                                                                                                                            ></em
+                                                                                                                                                        ></em
+                                                                                                                                                    ></em
+                                                                                                                                                ></em
+                                                                                                                                            ></em
+                                                                                                                                        ></em
+                                                                                                                                    ></em
+                                                                                                                                ></em
+                                                                                                                            ></em
+                                                                                                                        ></em
+                                                                                                                    ></em
+                                                                                                                ></em
+                                                                                                            ></em
+                                                                                                        ></em
+                                                                                                    ></em
+                                                                                                ></em
+                                                                                            ></em
+                                                                                        ></em
+                                                                                    ></em
+                                                                                ></em
+                                                                            ></em
+                                                                        ></em
+                                                                    ></em
+                                                                ></em
+                                                            ></em
+                                                        ></em
+                                                    ></em
+                                                ></em
+                                            ></em
+                                        ></em
+                                    ></em
+                                ></em
+                            ></em
+                        ></em
+                    >
+                </blockquote>
+                <p id="f0e4035c-6a56-4cb8-a7d8-c217b423e900" class="">
+                    Devolution Studio s&#x27;engage à vous fournir un conseil
+                    professionnel et éthique en toute transparence.
+                </p>
+                <p id="4c0648f3-9103-433d-8fe1-a866de0670dc" class="">
+                    Si votre besoin peut être résolu par un logiciel tiers, nous
+                    nous engageons à vous le signaler et à vous aider pour le
+                    mettre en place, plutôt que de vous proposer de créer un
+                    logiciel spécifique.
+                </p>
+                <p id="ea4a88fd-7150-47d9-8859-4fc0cd5072b8" class="">
+                    Cette approche s&#x27;inscrit dans l’obligation de conseil
+                    envers le clients, qui est au coeur de notre engagement
+                    envers la qualité et la satisfaction de nos prestations.
+                </p>
+                <h2 id="c8179be4-f91b-44bd-ad96-cae22dd7166f" class="">
+                    Conseils
+                </h2>
+                <p id="b0f47a9d-d05e-42cb-983c-403f400e907f" class="">
+                    Devolution Studio propose également une prestation de
+                    conseil pour vous aider à prendre les bonnes décisions en
+                    matière de développement de logiciels.
+                </p>
+                <p id="eff5a598-bda4-4e87-862f-c0d268d695ca" class="">
+                    Notre but est de vous offrir des conseils adaptés à vos
+                    besoins spécifiques. Que vous cherchiez à améliorer la
+                    qualité de votre code, à optimiser les performances de votre
+                    application, à concevoir une architecture solide, ou à
+                    choisir les technologies les plus appropriées pour votre
+                    projet, je suis là pour vous accompagner.
+                </p>
+                <p id="afe11aae-0520-4cf8-a0c7-ea9ebbfcc5a2" class="">
+                    Devolution s&#x27;engage à fournir des conseils clairs,
+                    pertinents et personnalisés, en prenant en compte vos
+                    objectifs, vos contraintes et votre budget. Nous restons à
+                    votre disposition pour répondre à toutes vos questions, vous
+                    aider à comprendre les enjeux du développement logiciel, et
+                    vous guider dans vos choix.
+                </p>
+                <p id="fa73dc3f-05de-4213-9533-e9df46299cb5" class="">
+                    En faisant appel à nos services de conseil en tant que
+                    concepteur développeur, vous bénéficierez d&#x27;un
+                    accompagnement sur mesure, adapté à vos besoins et à votre
+                    contexte, pour vous permettre de prendre des décisions
+                    éclairées et de mener à bien votre projet avec succès.
+                </p>
+                <h2 id="8515c0b9-4be7-4446-b13f-e4c01d9b82bd" class="">
+                    Développement
+                </h2>
+                <p id="7d6c8a20-b26f-4595-894b-a432fc93552d" class="">
+                    Notre service de prestation de développement web sur mesure
+                    est conçu pour répondre à vos besoins les plus spécifiques
+                    et les plus complexes en matière de développement de sites
+                    web. Nous vous proposons une prestation personnalisée, qui
+                    s&#x27;adapte à vos besoins et à vos exigences en matière de
+                    fonctionnalités, de design et de règles métier.
+                </p>
+                <p id="f4b1d05e-4dbf-44b8-a46f-7b64f7a97f24" class="">
+                    Devolution Studio travaillent en étroite collaboration avec
+                    vous pour comprendre :
+                </p>
+                <ul
+                    id="dde73c45-ac3f-4954-8929-2ac3d5b3249e"
+                    class="bulleted-list">
+                    <li style="list-style-type: disc">Votre visions</li>
+                </ul>
+                <ul
+                    id="ba6856ed-aaff-44c3-bd7b-726a21df798b"
+                    class="bulleted-list">
+                    <li style="list-style-type: disc">Votre métier</li>
+                </ul>
+                <ul
+                    id="26413ee7-1984-4521-b41c-a9a728561f68"
+                    class="bulleted-list">
+                    <li style="list-style-type: disc">Vos problème</li>
+                </ul>
+                <ul
+                    id="d9e4b866-2e97-4148-89f8-78f2c4d79697"
+                    class="bulleted-list">
+                    <li style="list-style-type: disc">Vos objectifs</li>
+                </ul>
+                <ul
+                    id="daa58410-bfbd-4803-8bc5-886cf002b1f4"
+                    class="bulleted-list">
+                    <li style="list-style-type: disc">Vos besoins</li>
+                </ul>
+                <p id="7a928658-aed4-4b9e-86ff-9424fd87ecfc" class="">
+                    Nos prestation inclue le développement de la solution
+                    technique une fois celle-ci définie. Le développement
+                    s’accompagne d’un certain nombre de garanties :
+                </p>
+                <h2 id="004ba6bd-9d51-4e5b-9f4a-9dd09b3ed0d6" class="">
+                    <strong><strong>Propriété</strong></strong>
+                </h2>
+                <p id="e6f61a9a-d3a1-4ea0-9154-645600fdfed3" class="">
+                    Tous les travaux de développement que nous réalisons pour
+                    vous sont considérés comme des œuvres de création
+                    intellectuelle et sont protégés par la loi. Conformément aux
+                    dispositions légales en vigueur, vous serez considéré comme
+                    le propriétaire exclusif de toutes les créations
+                    intellectuelles produites pour vous, y compris le code
+                    source développé par nos soins.
+                </p>
+                <p id="68735c01-e885-4622-b105-02c9df035ba2" class="">
+                    Nous nous engageons à ne pas divulguer ni à utiliser le code
+                    source développé pour vous à des fins autres que celles
+                    convenues entre nous.
+                </p>
+                <h3 id="6f193a1c-150d-476b-9243-d9db905aa9a2" class="">
+                    Qualité du code
+                </h3>
+                <p id="38c5aa80-cac7-4017-b58c-e38cf8c9cffb" class="">
+                    Nous accordons une grande importance à la qualité du code
+                    que nous développons pour vous. Nous utilisons des méthodes
+                    de développement éprouvées pour garantir la qualité, la
+                    stabilité et la sécurité de vos applications web.
+                </p>
+                <p id="65aebe4d-ba23-4cb5-a3d0-06ef77470036" class="">
+                    Nous sommes conscients que la qualité du code est
+                    essentielle pour assurer la pérennité et l&#x27;efficacité
+                    de vos projets. C&#x27;est pourquoi nous nous engageons à
+                    développer du code de qualité, documenté, maintenable et
+                    évolutif au possible.
+                </p>
+                <h3 id="dae1bc2b-824a-4abd-97f1-937bec587334" class="">
+                    Technologies
+                </h3>
+                <p id="0014a7b7-cdba-49b6-a88d-f78820825efe" class="">
+                    Notre prestation de développement web sur mesure
+                    s&#x27;appuie sur des technologies récentes pour vous offrir
+                    des solutions de qualité optimale. Nous mettons à votre
+                    disposition notre expertise dans l&#x27;utilisation des
+                    technologies les plus performantes pour répondre à vos
+                    besoins.
+                </p>
+                <p id="dda7deac-25ca-44cd-9882-8b0d2dc8647e" class="">
+                    Chaque utilisation de technologies dépend du projet,
+                    cependant nos domaines de prédilection se trouve autour de
+                    ces technologies et langages :
+                </p>
+                <ul
+                    id="a59dba2e-a5b6-4827-8945-ca428dbcb857"
+                    class="bulleted-list">
+                    <li style="list-style-type: disc">HTML5 / CSS3 / SCSS</li>
+                </ul>
+                <ul
+                    id="30ff7943-86c1-4f18-af83-d3cb7d89b076"
+                    class="bulleted-list">
+                    <li style="list-style-type: disc">
+                        Framework front JS (VueJS, NuxtJS, Angular, etc…)
+                    </li>
+                </ul>
+                <ul
+                    id="38f7a5d6-8b25-43a8-b4b7-b41113c399cf"
+                    class="bulleted-list">
+                    <li style="list-style-type: disc">
+                        Framework back-end JS ou C# (ExpressJS, AdonisJS, ABP,
+                        etc…)
+                    </li>
+                </ul>
+                <ul
+                    id="9d986d8d-d443-4064-b1f7-ebc87581c470"
+                    class="bulleted-list">
+                    <li style="list-style-type: disc">
+                        Bases de données MySQL
+                    </li>
+                </ul>
+                <ul
+                    id="d397235c-649d-44dc-925b-49dde7e37532"
+                    class="bulleted-list">
+                    <li style="list-style-type: disc">Systèmes Linux</li>
+                </ul>
+                <p id="d11580c8-9406-49cf-87b2-ca599f503e7d" class="">
+                    Nous sommes attentifs à l&#x27;évolution du marché et nous
+                    formons en continu pour rester à la pointe des technologies
+                    émergentes. Nous sommes ainsi en mesure de vous proposer des
+                    solutions innovantes et adaptées à vos besoins spécifiques.
+                </p>
+                <p id="5404bec6-c8b4-45d6-9aa8-9269e5960dea" class="">
+                    Notre approche est centrée sur la satisfaction de nos
+                    clients et nous faisons tout notre possible pour vous
+                    proposer des solutions qui répondent à vos besoins et qui
+                    intègrent les dernières innovations technologiques.
+                </p>
+                <h1 id="6a61c06e-dffa-41d9-964b-48e7737daed7" class="">
+                    Tarifs
+                </h1>
+                <hr id="67246d26-5a5f-449b-8e20-8965cc183f06" />
+                <p id="146f113d-dd99-46ce-98f2-87f638456ab4" class="">
+                    <strong>Notre tarif standard est de 300€ par jour</strong>,
+                    toutes charges comprise mais hors charges éventuelles du
+                    projet.
+                </p>
+                <p id="dcfb4705-a909-4b41-a314-47a9ec2d20e3" class="">
+                    Cependant, en fonction de la complexité, de la sensibilité
+                    ou du risque du projet, ce tarif peut varier et être
+                    augmenté de maximum 30% du prix au jour. Ceci est convenu
+                    avec le client et est détaillé dans le devis.
+                </p>
+                <p id="3aca7fc5-5c42-47d4-8676-8d81f73d2ad5" class="">
+                    Nous nous engageons à vous fournir un devis détaillé avant
+                    de débuter les travaux, incluant les éléments précisant les
+                    modalités de paiement. Le tarif final sera calculé en
+                    fonction du temps passé à travailler sur le projet, à partir
+                    de notre taux horaire standard.
+                </p>
+                <p id="1b12a01f-1b7f-4eef-8483-3ea989b6374c" class="">
+                    Nous nous réservons le droit de réévaluer le tarif si le
+                    projet change en cours de route, et nous vous fournirons une
+                    nouvelle estimation en cas d’augmentation significative du
+                    temps de travail nécessaire.
+                </p>
+                <p id="920807b7-5b26-4c50-a983-87ea99a37b1a" class="">
+                    Si vous avez des questions concernant notre tarification,
+                    n’hésitez pas à nous contacter pour plus d’informations.
+                </p>
+                <h2 id="4f442103-e4d1-4b49-ac94-0f97b8abef27" class="">
+                    Tarification au forfait
+                </h2>
+                <p id="006b4ab4-159e-4f35-964f-8ded0bfe4679" class="">
+                    Notre prestation est proposée au forfait, sur la base
+                    d&#x27;une estimation du temps de travail nécessaire pour
+                    mener à bien le projet.
+                </p>
+                <p id="cad14a22-18f5-4a27-977e-80fb7e8885cd" class="">
+                    Cependant, nous comprenons que des ajustements puissent être
+                    nécessaires au cours du développement. Nous acceptons donc
+                    des modifications mineurs apportées aux éléments spécifiés
+                    dans le cahier des charges initial, après signature de notre
+                    proposition commerciale.
+                </p>
+                <p id="2d6bba7a-5e76-497e-a7e8-406737e97576" class="">
+                    Nous nous réservons cependant le droit de refuser certaines
+                    modifications qui pourraient remettre en cause l’ingénierie
+                    technique ou l&#x27;ensemble du projet.
+                </p>
+                <p id="66e1cf1e-0b38-4be9-9c3f-38f8003bc71a" class="">
+                    Toutefois, nous nous engageons à informer notre client de
+                    notre décision dans les meilleurs délais.
+                </p>
+                <h2 id="238aecc2-49f0-416b-8359-6354dc4bb97f" class="">
+                    Tarification au temps
+                </h2>
+                <p id="43717add-5e06-40b9-bdc3-f08d3e67c5b1" class="">
+                    Dans le cadre de certaines prestations, la tarification à
+                    l&#x27;heure peut être plus adaptée que la tarification au
+                    forfait. Dans ce cas, les prestations sont facturées en
+                    fonction du nombre d&#x27;heures réellement effectuées.
+                </p>
+                <p id="135df848-1a9a-4e95-ad5f-b851883a388a" class="">
+                    Les heures effectuées sont consignées dans un document de
+                    suivi qui sera joint à la facture. Les prestations seront
+                    facturées mensuellement ou à l&#x27;achèvement de la
+                    prestation.
+                </p>
+                <p id="9988445d-4c57-40c7-8265-60948fff1f98" class="">
+                    Si des modifications ou des ajustements sont demandés par le
+                    client, le temps supplémentaire nécessaire sera facturé en
+                    plus du temps initial prévu.
+                </p>
+                <p id="2a43275d-f539-463d-b74e-121daaa33e9e" class="">
+                    Il est également important de souligner que le tarif horaire
+                    ne comprend pas les frais annexes tels que les frais de
+                    déplacement, les frais de documentation, les frais de
+                    logiciels, les frais d&#x27;hébergement, les frais de
+                    serveur, etc. Ces frais seront facturés en supplément sur
+                    présentation de justificatifs.
+                </p>
+                <p id="cd33bc33-9b7b-4dd6-842d-091debddce6c" class="">
+                    La tarification à l&#x27;heure est une solution souple qui
+                    permet une grande flexibilité dans la gestion des projets.
+                    Elle permet de s&#x27;adapter aux besoins réels du client et
+                    de facturer uniquement le temps de travail effectué.
+                </p>
+                <h1 id="99afc46a-d5a0-471a-888a-064f5b8a0a92" class="">
+                    Modalités de paiement
+                </h1>
+                <hr id="6afaee68-5613-4a47-9c24-eba7a6fdc956" />
+                <p id="c1175c4e-c828-4c04-a5bb-aaded983251c" class="">
+                    Le paiement s&#x27;effectue par virement bancaire ou par
+                    chèque, à l&#x27;ordre de Devolution Studio, dont les
+                    coordonnées bancaires vous seront communiquées lors de la
+                    signature du contrat.
+                </p>
+                <p id="89b83354-68dd-4ea0-92f5-473cb57aad9e" class="">
+                    Pour toute prestation supérieur à 1000€, un acompte de 30%
+                    du montant total est exigé avant le début des travaux. Le
+                    solde sera facturé à la fin de la prestation.
+                </p>
+                <p id="ec5b0082-1d2a-401b-81de-b3cf3159b8e6" class="">
+                    En cas d&#x27;annulation de la commande par le client,
+                    l&#x27;acompte versé ne sera pas remboursé.
+                </p>
+                <p id="f0011630-9675-46fa-8226-33f271356dc1" class="">
+                    En cas de litige, les parties s&#x27;engagent à trouver une
+                    solution à l&#x27;amiable. À défaut, le litige sera soumis
+                    aux tribunaux compétents.
+                </p>
+                <p id="5dc819b3-f688-40fd-b33a-2916464d52b0" class="">
+                    En cas de non-paiement de la facture dans un délai de 35
+                    jours après la date d&#x27;échéance, une mise en demeure
+                    sera adressée au client. Si le paiement n&#x27;est toujours
+                    pas effectué dans un délai de 50 jours après la mise en
+                    demeure, des frais de recouvrement pourront être facturés au
+                    client, conformément aux dispositions légales en vigueur.
+                </p>
+                <p id="c5c600ea-c6bf-4d22-b24b-3944e07b5a56" class="">
+                    En cas de défaut de paiement total ou partiel des services
+                    livrées à l&#x27;échéance, l&#x27;acheteur devra verser à la
+                    société Devolution Studio une pénalité de retard égale à
+                    trois fois le taux de l&#x27;intérêt légal.
+                </p>
+                <p id="5679e350-a3c3-40a6-a532-c477ceb29586" class="">
+                    Le taux de l&#x27;intérêt légal retenu est celui en vigueur
+                    au jour de la fin de la prestation.
+                </p>
+                <p id="471cef24-12f4-4802-8334-2595397c81c4" class="">
+                    Cette pénalité est calculée sur le montant TTC de la somme
+                    restant due, et court à compter de la date d&#x27;échéance
+                    du prix sans qu&#x27;aucune mise en demeure préalable ne
+                    soit nécessaire.
+                </p>
+                <p id="a5f5eceb-f152-4789-8bff-f370e4bca620" class="">
+                    En sus des indemnités de retard, toute somme, y compris
+                    l’acompte, non payée à sa date d’exigibilité produira de
+                    plein droit le paiement d’une indemnité forfaitaire de 40
+                    euros due au titre des frais de recouvrement.
+                </p>
+                <blockquote id="a2af2d54-38e4-424b-8632-d3ce1a34749e" class="">
+                    <em>Articles 441-10 et D. 441-5 du code de commerce.</em>
+                </blockquote>
+                <h1 id="15d4a3c3-fb0a-425f-a82a-ae1b5bf79c01" class="">
+                    Garantie légale de conformité et des vices cachés
+                </h1>
+                <hr id="fe66432c-66fc-4cf7-9355-217190304f7f" />
+                <p id="8e7807f3-ca75-452e-8ecc-54f1335a8c87" class="">
+                    Devolution Studio, dont le siège social est situé au 97
+                    avenue Pasteur, Angers 49100, garantit la conformité des
+                    biens vendus et s&#x27;engage à remédier à tout défaut de
+                    conformité existant lors de la délivrance des biens, dans
+                    les conditions et les délais prévus par la loi.
+                </p>
+                <p id="5cae3faf-da65-40ea-adcf-b09649af711a" class="">
+                    Devolution Studio est également tenue de la garantie légale
+                    des vices cachés, au titre de laquelle elle est tenue de
+                    garantir les défauts cachés des produits vendus qui les
+                    rendent impropres à leur utilisation ou qui en diminuent
+                    tellement l&#x27;usage que l&#x27;acheteur ne les aurait pas
+                    acquis, ou n&#x27;en aurait donné qu&#x27;un moindre prix,
+                    s&#x27;il les avait connus.
+                </p>
+                <p id="d2381e44-12a0-44c8-a228-dfa8ecf718dc" class="">
+                    Vous pouvez contacter Devolution Studio aux coordonnées
+                    suivantes pour demander la mise en place des garanties
+                    légales :
+                </p>
+                <ul
+                    id="c68b35fa-ba5a-473d-97a6-9983179a9a0c"
+                    class="bulleted-list">
+                    <li style="list-style-type: disc">
+                        Adresse postale : 97 avenue Pasteur, Angers 49100
+                    </li>
+                </ul>
+                <ul
+                    id="d84f483d-7492-447a-a3d1-2531804b7bd6"
+                    class="bulleted-list">
+                    <li style="list-style-type: disc">
+                        Adresse électronique : contact@devolution.studio
+                    </li>
+                </ul>
+                <ul
+                    id="57ed7001-f7bf-47a4-b491-414ccb2ccebb"
+                    class="bulleted-list">
+                    <li style="list-style-type: disc">
+                        Numéro de téléphone : 06 58 72 52 05
+                    </li>
+                </ul>
+                <p id="4b651267-4339-4fad-8f0a-5c5b3aa427fc" class=""></p>
+            </div>
+        </article>
+    </body>
+</html>

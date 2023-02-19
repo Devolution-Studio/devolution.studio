@@ -26,6 +26,25 @@ router.get('/contact/', function (req, res, next) {
 });
 
 /*
+ * CGV Page
+ */
+router.get('/cgv/', function (req, res, next) {
+    utils.log(req, 'cgv');
+    res.render('cgv', {
+        year: new Date().getFullYear(),
+        date: process.env.CGV_LAST_UPDATE,
+    });
+});
+
+router.get('/cgv/html/', function (req, res, next) {
+    utils.log(req, 'cgv-html');
+    res.download(
+        utils.rootDir +
+            '/public/files/Conditions générales de ventes - Devolution Studio.html'
+    );
+});
+
+/*
  * Send mail
  */
 router.post('/contact/send/', async function (req, res, next) {
