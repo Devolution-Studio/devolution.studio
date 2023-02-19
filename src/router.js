@@ -45,6 +45,16 @@ router.get('/cgv/html/', function (req, res, next) {
 });
 
 /*
+ * Pricing page
+ */
+router.get('/tarifs/', function (req, res, next) {
+    utils.log(req, 'tarfis');
+    res.render('pricing', {
+        year: new Date().getFullYear(),
+    });
+});
+
+/*
  * Send mail
  */
 router.post('/contact/send/', async function (req, res, next) {

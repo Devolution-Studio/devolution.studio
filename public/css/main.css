@@ -2531,6 +2531,10 @@ h6 {
     opacity: 0.98;
 }
 
+.header.is-sticky.-sticky-light .header__nav {
+    opacity: 1;
+}
+
 .header.-sticky-initial.-sticky-light .header__logo__light,
 .header.is-sticky.-sticky-light .header__logo__light {
     position: absolute;
@@ -2632,6 +2636,33 @@ h6 {
 .header .header__bar {
     transition: box-shadow 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.05s,
         background-color 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.05s;
+}
+
+.header .header__nav {
+    opacity: 0;
+    transition: box-shadow 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.05s,
+        background-color 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.05s,
+        opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.05s;
+}
+
+.header .header__nav ul {
+    display: flex;
+}
+
+.header .header__nav li {
+    padding: 1rem 2rem;
+}
+
+.header .header__nav a {
+    color: black;
+    font-weight: 500;
+    padding-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    .header .header__nav {
+        display: none;
+    }
 }
 
 .header .header__logo a {
@@ -8906,6 +8937,22 @@ html.full-page-slider body {
 
 .mx-auto {
     margin-left: auto;
+    margin-right: auto;
+}
+
+.mb-auto {
+    margin-bottom: auto;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.mr-auto {
     margin-right: auto;
 }
 
