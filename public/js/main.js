@@ -163,7 +163,7 @@
                             {
                                 scaleY: 1,
                                 ease: 'none',
-                                duration: 1,
+                                duration: 0.2,
                                 delay: 0.3,
                                 onStart: () => {
                                     bg.classList.add('origin-top');
@@ -173,7 +173,7 @@
                         .to(
                             progress,
                             {
-                                duration: 0.5,
+                                duration: 0.33,
                                 ease: 'quart.inOut',
                                 opacity: 0,
                                 scale: 0.75,
@@ -219,7 +219,7 @@
 
                         .to(bg, {
                             ease: 'quart.inOut',
-                            duration: 0.6,
+                            duration: 0.2,
                             scaleY: 1,
                             onStart: () => {
                                 bg.classList.remove('origin-top');
@@ -230,7 +230,7 @@
                         })
                         .to(progress, {
                             delay: 0.1,
-                            duration: 0.6,
+                            duration: 0.33,
                             ease: 'quart.out',
                             opacity: 1,
                             scale: 1,
@@ -239,7 +239,7 @@
                             progressInner,
                             {
                                 scaleY: 1,
-                                duration: 1,
+                                duration: 0.5,
                                 ease: 'none',
                             },
                             '>-0.3'
