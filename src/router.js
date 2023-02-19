@@ -48,8 +48,18 @@ router.get('/cgv/html/', function (req, res, next) {
  * Pricing page
  */
 router.get('/tarifs/', function (req, res, next) {
-    utils.log(req, 'tarfis');
+    utils.log(req, 'tarifs');
     res.render('pricing', {
+        year: new Date().getFullYear(),
+    });
+});
+
+/*
+ * Services page
+ */
+router.get('/services/', function (req, res, next) {
+    utils.log(req, 'services');
+    res.render('services', {
         year: new Date().getFullYear(),
     });
 });

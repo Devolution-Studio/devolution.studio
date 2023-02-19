@@ -12636,3 +12636,28 @@ html.full-page-slider body {
     width: 100%;
     height: 100%;
 }
+
+.micro-text {
+    font-size: 10px;
+    text-align: right;
+    line-height: 9px;
+    margin-top: 5px;
+    opacity: 0.5;
+    color: black;
+}
+
+@media (max-width: 575px) {
+    .micro-text {
+        display: none;
+    }
+}
+
+.skill-list {
+    margin-top: 1rem;
+    margin-left: 8px;
+}
+
+.skill-list li:before {
+    content: '-';
+    margin-right: 5px;
+}
