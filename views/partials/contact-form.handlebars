@@ -1,0 +1,55 @@
+<form
+    class='row x-gap-32 y-gap-32 js-ajax-form'
+    method='POST'
+    action='/contact/send'
+    data-message-success='Votre message à été envoyé, nous vous répondrons dans les plus brefs délais.'
+    data-message-error="Un problème est survenu. Veuillez nous contacter directement à <a href='mailto:contact@devolution.studio'>contact@devolution.studio</a>."
+>
+    <div class='col-12'>
+        <label class='js-input-group'>
+            Nom / Prénom
+            <input
+                type='text'
+                name='name'
+                data-required
+                placeholder='Votre nom / prénom'
+            />
+            <span class='form__error'></span>
+        </label>
+    </div>
+
+    <div class='col-12'>
+        <label class='js-input-group'>
+            Email
+            <input
+                type='text'
+                name='email'
+                data-required
+                placeholder='Votre email'
+            />
+            <span class='form__error'></span>
+        </label>
+    </div>
+
+    <div class='col-12'>
+        <label class='js-input-group'>
+            Message
+            <textarea
+                name='message'
+                rows='1'
+                placeholder='Votre message'
+            ></textarea>
+            <span class='form__error'></span>
+        </label>
+    </div>
+
+    <div class='col-12 ajax-form-alert js-ajax-form-alert'>
+        <div class='ajax-form-alert__content'></div>
+    </div>
+
+    <div class='col-12'>
+        <button type='submit' class='button -md -black text-white'>
+            Envoyer
+        </button>
+    </div>
+</form>
