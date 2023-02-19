@@ -50,4 +50,12 @@ app.engine(
 app.set('view engine', 'handlebars');
 app.set('views', utils.rootDir + '/views');
 
+/*
+ * Catch 404 and forward to error handler
+ */
+app.get('*', function (req, res) {
+    res.status(req.status || 404);
+    res.render('404');
+});
+
 module.exports = app;
