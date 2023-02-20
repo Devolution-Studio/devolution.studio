@@ -64,12 +64,13 @@
                         </ul>
 
                         <div class='priceCard__button mt-32'>
-                            <a
+                            <button
                                 href='#'
-                                class='button -sm -outline-black text-black'
+                                class='button -sm -outline-black text-black pricing-button'
+                                data-pricing='Plan rapide'
                             >
                                 C'est parti !
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -125,12 +126,13 @@
                         </ul>
 
                         <div class='priceCard__button mt-32'>
-                            <a
+                            <button
                                 href='#'
-                                class='button -sm -outline-white text-white'
+                                class='button -sm -outline-white text-white pricing-button'
+                             data-pricing='Plan classique'
                             >
                                 C'est parti !
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -184,12 +186,13 @@
                         </ul>
 
                         <div class='priceCard__button mt-32'>
-                            <a
+                            <button
                                 href='#'
-                                class='button -sm -outline-black text-black'
+                                class='button -sm -outline-black text-black pricing-button'
+                                data-pricing='Plan confiance'
                             >
                                 C'est parti !
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -202,7 +205,7 @@
 <!-- section end -->
 
 <!-- section start -->
-<section class='layout-pt-md layout-pb-lg'>
+<section class='layout-pt-md layout-pb-lg' id='contact'>
     <!-- container start -->
     <div class='container'>
         <!-- row start -->
@@ -222,21 +225,6 @@
                         <br />
                         N'attendez plus pour réaliser vos projets !
                     </p>
-
-                    <div class='social -bordered mt-32'>
-                        <a class='social__item border-dark text-black' href='#'>
-                            <i class='fa fa-twitter'></i>
-                        </a>
-                        <a class='social__item border-dark text-black' href='#'>
-                            <i class='fa fa-instagram'></i>
-                        </a>
-                        <a class='social__item border-dark text-black' href='#'>
-                            <i class='fa fa-youtube-play'></i>
-                        </a>
-                        <a class='social__item border-dark text-black' href='#'>
-                            <i class='fa fa-linkedin'></i>
-                        </a>
-                    </div>
                 </div>
             </div>
 
@@ -251,3 +239,30 @@
     <!-- container end -->
 </section>
 <!-- section end -->
+
+<script type="text/javascript">
+    let doesUserInput = false;
+    const input = $('#contactFormMessage');
+
+    $(input).on('input', () => {
+        doesUserInput = true;
+    })
+
+    $('.pricing-button').click((e) => {
+        const plan = $(e.currentTarget).attr('data-pricing');
+        let text = `* Plan : ${plan}`
+
+        if ($(input).val().trim() == '' || !doesUserInput)
+        {
+            text = '(Votre message)\n\n' + text;
+        } else {
+            text = $(input).val() + '\n\n' + text;
+        }
+        
+        $(input).val(text)
+
+        $('html, body').animate({
+            scrollTop: ($("#contact").offset().top - (window.innerHeight * 0.15))
+        }, 0);
+    });
+</script>

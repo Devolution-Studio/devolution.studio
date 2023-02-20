@@ -36,14 +36,6 @@ router.get('/cgv/', function (req, res, next) {
     });
 });
 
-router.get('/cgv/html/', function (req, res, next) {
-    utils.log(req, 'cgv-html');
-    res.download(
-        utils.rootDir +
-            '/public/files/Conditions générales de ventes - Devolution Studio.html'
-    );
-});
-
 /*
  * Pricing page
  */
