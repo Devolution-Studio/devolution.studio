@@ -79,7 +79,7 @@ router.post('/contact/send/', async function (req, res, next) {
         statusCode = 200;
     }
 
-    res.send('', statusCode);
+    res.status(statusCode).send(body);
 });
 
 module.exports = router;
