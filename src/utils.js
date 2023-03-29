@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const moment = require('moment');
 const nodemailer = require('nodemailer');
+const request = require('request-promise-native');
 
 const env_PROD = 'prod';
 
@@ -53,9 +54,32 @@ function log(req, page) {
     );
 }
 
+async function validateCaptcha(req) {
+    const recaptchaResponse = req.body['g-recaptcha-response'];
+    const secretKey = process.env.RECAPTCHA_SERVER_KEY;
+    const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaResponse}`;
+
+    if (!recaptchaResponse) {
+        return false;
+    }
+
+    const response = await request.post(verificationUrl);
+
+    // Analyser la réponse de l'API reCAPTCHA
+    const responseBody = JSON.parse(response);
+
+    if (!responseBody.success) {
+        const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+        console.error(`Failed captcha for ${ip}`);
+    }
+
+    return responseBody.success;
+}
+
 module.exports = {
     rootDir,
     env_PROD,
     sendContactMessage,
     log,
+    validateCaptcha,
 };

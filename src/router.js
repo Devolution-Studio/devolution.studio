@@ -22,7 +22,10 @@ router.get('/', function (req, res, next) {
  */
 router.get('/contact/', function (req, res, next) {
     utils.log(req, 'contact');
-    res.render('contact', { year: new Date().getFullYear() });
+    res.render('contact', {
+        year: new Date().getFullYear(),
+        recaptchaKey: process.env.RECAPTCHA_CLIENT_KEY,
+    });
 });
 
 /*
@@ -43,6 +46,7 @@ router.get('/tarifs/', function (req, res, next) {
     utils.log(req, 'tarifs');
     res.render('pricing', {
         year: new Date().getFullYear(),
+        recaptchaKey: process.env.RECAPTCHA_CLIENT_KEY,
     });
 });
 
@@ -62,16 +66,17 @@ router.get('/services/', function (req, res, next) {
 router.post('/contact/send/', async function (req, res, next) {
     utils.log(req, 'contact/send');
 
-    let statusCode = 200;
+    let statusCode = 500;
 
     if (
-        !(await utils.sendContactMessage(
+        (await utils.validateCaptcha(req)) &&
+        (await utils.sendContactMessage(
             req.body.name,
             req.body.email,
             req.body.message
         ))
     ) {
-        statusCode = 500;
+        statusCode = 200;
     }
 
     res.send('', statusCode);
