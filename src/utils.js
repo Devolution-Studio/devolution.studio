@@ -15,7 +15,9 @@ var sendContactMessage = async function (name, email, message) {
 
     try {
         var transporter = nodemailer.createTransport({
-            service: 'gmail',
+            host: 'ssl0.ovh.net',
+            port: 465,
+            secure: true,
             auth: {
                 user: process.env.MAIL_USER,
                 pass: process.env.MAIL_PASSWORD,
@@ -29,7 +31,15 @@ var sendContactMessage = async function (name, email, message) {
             text: message + '\n\nFrom ' + email,
         };
 
-        transporter.sendMail(mailOptions);
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+                return false;
+            } else {
+                console.log('Email sent: ' + info.response);
+                return true;
+            }
+        });
         return true;
     } catch (e) {
         console.error(e);
