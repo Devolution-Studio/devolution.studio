@@ -13,22 +13,22 @@ var sendContactMessage = async function (name, email, message) {
         return false;
     }
 
-    var transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.MAIL_USER,
-            pass: process.env.MAIL_PASSWORD,
-        },
-    });
-
-    var mailOptions = {
-        from: email,
-        to: process.env.MAIL_USER_TO,
-        subject: email + ' : ' + name,
-        text: message + '\n\nFrom ' + email,
-    };
-
     try {
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.MAIL_USER,
+                pass: process.env.MAIL_PASSWORD,
+            },
+        });
+
+        var mailOptions = {
+            from: email,
+            to: process.env.MAIL_USER_TO,
+            subject: email + ' : ' + name,
+            text: message + '\n\nFrom ' + email,
+        };
+
         transporter.sendMail(mailOptions);
         return true;
     } catch (e) {
