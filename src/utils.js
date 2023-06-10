@@ -47,12 +47,15 @@ var sendContactMessage = async function (name, email, message) {
     }
 };
 
-function log(req, page) {
+function log(req, page, data = null) {
     if (req.headers['sec-fetch-dest'] == 'image') return;
 
     const formattedDate = moment().format('DD/MM/YYYY - HH:mm:ss');
     const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     const text = `[${formattedDate}] > Get page ${page} : ${ip}`;
+
+    if (data != null) text += `, data : ${data}`;
+
     console.log(text);
 
     fs.appendFile(

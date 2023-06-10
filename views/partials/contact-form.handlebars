@@ -13,6 +13,7 @@
             <input
                 type='text'
                 name='name'
+                value='{{{name}}}'
                 data-required
                 placeholder='Votre nom / prénom'
             />
@@ -25,6 +26,7 @@
             Email
             <input
                 type='text'
+                value='{{{email}}}'
                 name='email'
                 data-required
                 placeholder='Votre email'
@@ -41,7 +43,7 @@
                 rows='3'
                 id='contactFormMessage'
                 placeholder='Votre message'
-            ></textarea>
+            >{{{message}}}</textarea>
             <span class='form__error'></span>
         </label>
     </div>

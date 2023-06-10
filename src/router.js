@@ -20,11 +20,14 @@ router.get('/', function (req, res, next) {
 /*
  * Contact page
  */
-router.get('/contact/', function (req, res, next) {
+router.get('/contact', function (req, res, next) {
     utils.log(req, 'contact');
     res.render('contact', {
         year: new Date().getFullYear(),
         recaptchaKey: process.env.RECAPTCHA_CLIENT_KEY,
+        name: req.query.name,
+        email: req.query.email,
+        message: req.query.message,
     });
 });
 
