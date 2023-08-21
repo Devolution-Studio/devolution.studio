@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const moment = require('moment');
+const geoip = require('geoip-lite');
+const browser = require('browser-detect');
 const nodemailer = require('nodemailer');
 const request = require('request-promise-native');
 
@@ -67,6 +69,16 @@ function log(req, page, data = null) {
     );
 }
 
+function logX(report) {
+    fs.appendFile(
+        path.join(__dirname + '/../logs/x.log'),
+        report + '\n\n',
+        (err) => {
+            if (err) throw err;
+        }
+    );
+}
+
 async function validateCaptcha(req) {
     const recaptchaResponse = req.body['g-recaptcha-response'];
     const secretKey = process.env.RECAPTCHA_SERVER_KEY;
@@ -89,10 +101,58 @@ async function validateCaptcha(req) {
     return responseBody.success;
 }
 
+function getXInfo(req, res) {
+    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+
+    var info = browser(req.headers['user-agent']);
+    const geo = geoip.lookup(ip);
+
+    var report = [];
+    const formattedDate = moment().format('DD/MM/YYYY HH:mm:ss');
+    var zoom = (geo.ll[0] + ':' + geo.ll[1]).length;
+    zoom = zoom > 19 ? 19 : zoom;
+    zoom = zoom < 12 ? 12 : zoom;
+
+    report.push(formattedDate + ' - ' + ip);
+    report.push(
+        `Geo : ${geo.country}, ${geo.city}, ${geo.region}.${
+            geo.eu ? ' Europe' : ''
+        } (timezone ${geo.timezone})`
+    );
+    report.push(
+        `Map : https://www.google.com/maps/@${geo.ll[0]},${geo.ll[1]},${zoom}z`
+    );
+    report.push(
+        `Navigateur : ${info.name} ${info.versionNumber} ${
+            info.mobile == true ? '(mobile)' : ''
+        }`
+    );
+    report.push(`OS : ${info.os}`);
+    report.push(`Langages : ${getLanguages(req)}`);
+
+    const log = report.join('\n');
+    logX(log);
+}
+
+function getLanguages(req) {
+    const acceptLanguage = req.headers['accept-language'];
+    const languages = acceptLanguage.split(',');
+    const formattedLanguages = [];
+
+    languages.forEach((language) => {
+        const [lang, q] = language.trim().split(';q=');
+        const languageWithQuality = `${lang} (${q || '1'})`;
+        formattedLanguages.push(languageWithQuality);
+    });
+
+    return formattedLanguages.join(', ');
+}
+
 module.exports = {
     rootDir,
     env_PROD,
     sendContactMessage,
     log,
     validateCaptcha,
+    getXInfo,
 };

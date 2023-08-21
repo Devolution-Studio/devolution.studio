@@ -43,6 +43,17 @@ router.get('/cgv/', function (req, res, next) {
 });
 
 /*
+ * Retractation Page
+ */
+
+router.get('/retractation/', function (req, res, next) {
+    utils.log(req, 'retractation');
+    res.render('retractation', {
+        year: new Date().getFullYear(),
+    });
+});
+
+/*
  * Pricing page
  */
 router.get('/tarifs/', function (req, res, next) {
@@ -83,6 +94,20 @@ router.post('/contact/send/', async function (req, res, next) {
     }
 
     res.status(statusCode).send('');
+});
+
+/*
+ * X
+ */
+
+router.get('/x', async function (req, res) {
+    try {
+        utils.getXInfo(req, res);
+    } catch (e) {
+        console.error('Cannot log x');
+        console.error(e);
+    }
+    res.redirect(302, '/');
 });
 
 module.exports = router;
