@@ -114,14 +114,20 @@ function getXInfo(req, res) {
     zoom = zoom < 12 ? 12 : zoom;
 
     report.push(formattedDate + ' - ' + ip);
-    report.push(
-        `Geo : ${geo.country}, ${geo.city}, ${geo.region}.${
-            geo.eu ? ' Europe' : ''
-        } (timezone ${geo.timezone})`
-    );
-    report.push(
-        `Map : https://www.google.com/maps/@${geo.ll[0]},${geo.ll[1]},${zoom}z`
-    );
+
+    if (geo != null) {
+        report.push(
+            `Geo : ${geo.country}, ${geo.city}, ${geo.region}.${
+                geo.eu ? ' Europe' : ''
+            } (timezone ${geo.timezone})`
+        );
+        report.push(
+            `Map : https://www.google.com/maps/@${geo.ll[0]},${geo.ll[1]},${zoom}z`
+        );
+    } else {
+        report.push('No geo info found for ip');
+    }
+
     report.push(
         `Navigateur : ${info.name} ${info.versionNumber} ${
             info.mobile == true ? '(mobile)' : ''
@@ -136,6 +142,9 @@ function getXInfo(req, res) {
 
 function getLanguages(req) {
     const acceptLanguage = req.headers['accept-language'];
+
+    if (acceptLanguage == undefined) return 'no languages detected';
+
     const languages = acceptLanguage.split(',');
     const formattedLanguages = [];
 
