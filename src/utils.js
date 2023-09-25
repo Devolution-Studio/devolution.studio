@@ -109,13 +109,14 @@ function getXInfo(req, res) {
 
     var report = [];
     const formattedDate = moment().format('DD/MM/YYYY HH:mm:ss');
-    var zoom = (geo.ll[0] + ':' + geo.ll[1]).length;
-    zoom = zoom > 19 ? 19 : zoom;
-    zoom = zoom < 12 ? 12 : zoom;
 
     report.push(formattedDate + ' - ' + ip);
 
     if (geo != null) {
+        var zoom = (geo.ll[0] + ':' + geo.ll[1]).length;
+        zoom = zoom > 19 ? 19 : zoom;
+        zoom = zoom < 12 ? 12 : zoom;
+
         report.push(
             `Geo : ${geo.country}, ${geo.city}, ${geo.region}.${
                 geo.eu ? ' Europe' : ''
