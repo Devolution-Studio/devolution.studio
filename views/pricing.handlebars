@@ -29,7 +29,7 @@
                         <h3
                             class='priceCard__price number -md text-black fw-600 mt-24'
                         >
-                            60 €
+                            40 €
                         </h3>
 
                         <p class='priceCard__badge text-sm fw-500 mt-32'>
@@ -37,7 +37,8 @@
                         </p>
 
                         <p class='text-black fw-500 mt-24'>
-                            Un plan idéal pour les projets de très petite envergure ou pour les tâches ponctuelles.
+                            Un plan idéal pour les projets de très petite
+                            envergure ou pour les tâches ponctuelles.
                         </p>
 
                         <ul class='priceCard__list mt-24'>
@@ -48,7 +49,8 @@
                             </li>
                             <li>
                                 <p>
-                                    Conception d'un cahier des charges sans développement.
+                                    Conception d'un cahier des charges sans
+                                    développement.
                                 </p>
                             </li>
                             <li>
@@ -64,13 +66,13 @@
                         </ul>
 
                         <div class='priceCard__button mt-32'>
-                            <button
-                                href='#'
+                            <a
+                                href='#contact'
                                 class='button -sm -outline-black text-black pricing-button'
                                 data-pricing='Plan rapide'
                             >
                                 C'est parti !
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -99,7 +101,9 @@
                         </p>
 
                         <p class='text-white fw-500 mt-24'>
-                            Un choix parfait pour les projets de développement web de taille moyenne qui requièrent des solutions de qualité.
+                            Un choix parfait pour les projets de développement
+                            web de taille moyenne qui requièrent des solutions
+                            de qualité.
                         </p>
 
                         <ul class='priceCard__list mt-24'>
@@ -126,13 +130,13 @@
                         </ul>
 
                         <div class='priceCard__button mt-32'>
-                            <button
-                                href='#'
+                            <a
+                                href='#contact'
                                 class='button -sm -outline-white text-white pricing-button'
-                             data-pricing='Plan classique'
+                                data-pricing='Plan classique'
                             >
                                 C'est parti !
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -159,7 +163,8 @@
                         </p>
 
                         <p class='text-black fw-500 mt-24'>
-                            Bénéficiez d'un accompagnement personnalisé, suivie et approfondie dans vos projets.
+                            Bénéficiez d'un accompagnement personnalisé, suivie
+                            et approfondie dans vos projets.
                         </p>
 
                         <ul class='priceCard__list mt-24'>
@@ -186,13 +191,13 @@
                         </ul>
 
                         <div class='priceCard__button mt-32'>
-                            <button
-                                href='#'
+                            <a
+                                href='#contact'
                                 class='button -sm -outline-black text-black pricing-button'
                                 data-pricing='Plan confiance'
                             >
                                 C'est parti !
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -221,7 +226,8 @@
                     </h2>
 
                     <p class='text-base mt-24'>
-                        Toujours à votre écoute pour vous accompagner dans la réalisation de vos ambitions.
+                        Toujours à votre écoute pour vous accompagner dans la
+                        réalisation de vos ambitions.
                         <br />
                         N'attendez plus pour réaliser vos projets !
                     </p>
@@ -239,30 +245,3 @@
     <!-- container end -->
 </section>
 <!-- section end -->
-
-<script type="text/javascript">
-    let doesUserInput = false;
-    const input = $('#contactFormMessage');
-
-    $(input).on('input', () => {
-        doesUserInput = true;
-    })
-
-    $('.pricing-button').click((e) => {
-        const plan = $(e.currentTarget).attr('data-pricing');
-        let text = `* Plan : ${plan}`
-
-        if ($(input).val().trim() == '' || !doesUserInput)
-        {
-            text = '(Votre message)\n\n' + text;
-        } else {
-            text = $(input).val() + '\n\n' + text;
-        }
-        
-        $(input).val(text)
-
-        $('html, body').animate({
-            scrollTop: ($("#contact").offset().top - (window.innerHeight * 0.15))
-        }, 0);
-    });
-</script>

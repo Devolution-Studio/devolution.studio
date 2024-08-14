@@ -53,4 +53,4 @@ npm run dev
 ## Licenses
 
 Devolution Studio, all right reserved
-Template from http://mikhailmasterov.com/stukram/html/home-1.html
+Template from https://preview.themeforest.net/item/stukram-ajax-agency-portfolio-template/full_screen_preview/27663380
