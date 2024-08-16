@@ -151,28 +151,12 @@ gulp.task(
         'init:logs-folder',
         'copy:assets',
         'copy:images',
+        'copy:env',
         'optimize:js',
         'optimize:css',
         'copy:server',
         'copy:views',
         'copy:npm-package',
         'npm-install'
-    )
-);
-
-gulp.task(
-    'prod',
-    gulp.series(
-        'clean',
-        'copy:assets',
-        'copy:images',
-        'init:logs-folder',
-        'optimize:js',
-        'optimize:css',
-        'copy:server',
-        'copy:views',
-        'copy:npm-package',
-        'npm-install',
-        'copy:env'
     )
 );

@@ -9,7 +9,6 @@ const request = require('request-promise-native');
 const env_PROD = 'prod';
 
 var rootDir = process.cwd();
-console.log('Current folder : ' + rootDir);
 
 var sendContactMessage = async function (name, email, message) {
     if (name == undefined || email == undefined || message == undefined) {
