@@ -13,7 +13,8 @@ const fs = require('fs'),
     cleaner = require('gulp-clean'),
     tap = require('gulp-tap'),
     nodemon = require('gulp-nodemon'),
-    newfile = require('gulp-file');
+    newfile = require('gulp-file'),
+    vinyl = require('vinyl');
 
 const logsFolderPath = path.resolve(
     __dirname,
@@ -30,16 +31,28 @@ gulp.task('clean', () => {
 gulp.task('copy:assets', function () {
     return gulp
         .src('./public/**/*', {
-            ignore: ['./public/**/*.css', './public/**/*.js'],
+            ignore: [
+                './public/**/main.css',
+                './public/**/main.js',
+                './public/**/*.{svg,png,jpg,gif}',
+            ],
         })
         .pipe(gulp.dest('./dist/public/'));
 });
 
-gulp.task('copy:npm-package', () => {
+gulp.task('copy:images', function () {
     return gulp
-        .src('./package*.json')
-        .pipe(minify())
-        .pipe(gulp.dest('./dist/'));
+        .src('./public/**/*.{svg,png,jpg,gif}', { encoding: false })
+        .pipe(gulp.dest('./dist/public/'));
+});
+
+gulp.task('copy:npm-package', () => {
+    return (
+        gulp
+            .src('./package*.json')
+            //.pipe(minify())
+            .pipe(gulp.dest('./dist/'))
+    );
 });
 
 gulp.task('npm-install', () => {
@@ -49,45 +62,62 @@ gulp.task('npm-install', () => {
 });
 
 gulp.task('optimize:js', () => {
-    return gulp
-        .src(['./public/js/*.js'])
-        .pipe(concat('main.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('./dist/public/js/'));
+    return (
+        gulp
+            .src(['./public/js/*.js'])
+            .pipe(concat('main.js'))
+            //.pipe(uglify())
+            .pipe(gulp.dest('./dist/public/js/'))
+    );
 });
 
 gulp.task('optimize:css', () => {
-    return gulp
-        .src('./public/css/*.css')
-        .pipe(concatCss('main.css'))
-        .pipe(cleanCSS())
-        .pipe(gulp.dest('./dist/public/css/'));
+    return (
+        gulp
+            .src('./public/css/*.css')
+            //.pipe(concatCss('main.css'))
+            //.pipe(cleanCSS())
+            .pipe(gulp.dest('./dist/public/css/'))
+    );
 });
 
 gulp.task('copy:server', () => {
-    return gulp
-        .src('./src/**/*.js')
-        .pipe(uglify())
-        .pipe(
-            rename(function (path) {
-                path.extname = '.js';
-            })
-        )
-        .pipe(gulp.dest('./dist/server/'));
+    return (
+        gulp
+            .src('./src/**/*.js')
+            //.pipe(uglify())
+            .pipe(
+                rename(function (path) {
+                    path.extname = '.js';
+                })
+            )
+            .pipe(gulp.dest('./dist/server/'))
+    );
 });
 
 gulp.task('init:logs-folder', () => {
-    return gulp.src(logsFilePath, { allowEmpty: true }).pipe(
-        tap(function () {
-            return newfile(path.basename(logsFilePath), '').pipe(
-                gulp.dest(logsFolderPath)
-            );
-        })
-    );
+    var src = require('stream').Readable({ objectMode: true });
+    src._read = function () {
+        this.push(
+            new vinyl({
+                cwd: '',
+                base: './',
+                path: './',
+                contents: Buffer.from('', 'utf-8'),
+            })
+        );
+        this.push(null);
+    };
+
+    return src.pipe(gulp.dest(logsFilePath));
 });
 
 gulp.task('copy:views', () => {
     return gulp.src('./views/**/*.handlebars').pipe(gulp.dest('./dist/views/'));
+});
+
+gulp.task('copy:env', () => {
+    return gulp.src('./.env').pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('watch', function () {
@@ -118,12 +148,31 @@ gulp.task(
     'build',
     gulp.series(
         'clean',
+        'init:logs-folder',
         'copy:assets',
+        'copy:images',
         'optimize:js',
         'optimize:css',
         'copy:server',
         'copy:views',
         'copy:npm-package',
         'npm-install'
+    )
+);
+
+gulp.task(
+    'prod',
+    gulp.series(
+        'clean',
+        'copy:assets',
+        'copy:images',
+        'init:logs-folder',
+        'optimize:js',
+        'optimize:css',
+        'copy:server',
+        'copy:views',
+        'copy:npm-package',
+        'npm-install',
+        'copy:env'
     )
 );

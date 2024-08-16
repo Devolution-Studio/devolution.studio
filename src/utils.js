@@ -9,6 +9,7 @@ const request = require('request-promise-native');
 const env_PROD = 'prod';
 
 var rootDir = process.cwd();
+console.log('Current folder : ' + rootDir);
 
 var sendContactMessage = async function (name, email, message) {
     if (name == undefined || email == undefined || message == undefined) {
@@ -32,6 +33,8 @@ var sendContactMessage = async function (name, email, message) {
             subject: email + ' : ' + name,
             text: message + '\n\nFrom ' + email,
         };
+
+        if (process.env.ENV == 'dev') return true;
 
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {

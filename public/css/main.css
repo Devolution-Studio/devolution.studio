@@ -2639,7 +2639,6 @@ h6 {
 }
 
 .header .header__nav {
-    opacity: 0;
     transition: box-shadow 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.05s,
         background-color 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.05s,
         opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.05s;
@@ -12660,4 +12659,15 @@ html.full-page-slider body {
 .skill-list li:before {
     content: '-';
     margin-right: 5px;
+}
+
+.checkbox-group {
+    display: flex;
+    column-gap: 1.5rem;
+    padding-top: 14px;
+}
+
+.checkbox-item {
+    display: flex;
+    column-gap: .5rem;
 }
