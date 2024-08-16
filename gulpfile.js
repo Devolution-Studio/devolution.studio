@@ -47,12 +47,10 @@ gulp.task('copy:images', function () {
 });
 
 gulp.task('copy:npm-package', () => {
-    return (
-        gulp
-            .src('./package*.json')
-            //.pipe(minify())
-            .pipe(gulp.dest('./dist/'))
-    );
+    return gulp
+        .src('./package*.json')
+        .pipe(minify())
+        .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('npm-install', () => {
@@ -62,37 +60,31 @@ gulp.task('npm-install', () => {
 });
 
 gulp.task('optimize:js', () => {
-    return (
-        gulp
-            .src(['./public/js/*.js'])
-            .pipe(concat('main.js'))
-            //.pipe(uglify())
-            .pipe(gulp.dest('./dist/public/js/'))
-    );
+    return gulp
+        .src(['./public/js/*.js'])
+        .pipe(concat('main.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/public/js/'));
 });
 
 gulp.task('optimize:css', () => {
-    return (
-        gulp
-            .src('./public/css/*.css')
-            //.pipe(concatCss('main.css'))
-            //.pipe(cleanCSS())
-            .pipe(gulp.dest('./dist/public/css/'))
-    );
+    return gulp
+        .src('./public/css/*.css')
+        .pipe(concatCss('main.css'))
+        .pipe(cleanCSS())
+        .pipe(gulp.dest('./dist/public/css/'));
 });
 
 gulp.task('copy:server', () => {
-    return (
-        gulp
-            .src('./src/**/*.js')
-            //.pipe(uglify())
-            .pipe(
-                rename(function (path) {
-                    path.extname = '.js';
-                })
-            )
-            .pipe(gulp.dest('./dist/server/'))
-    );
+    return gulp
+        .src('./src/**/*.js')
+        .pipe(uglify())
+        .pipe(
+            rename(function (path) {
+                path.extname = '.js';
+            })
+        )
+        .pipe(gulp.dest('./dist/server/'));
 });
 
 gulp.task('init:logs-folder', () => {
