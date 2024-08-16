@@ -56,7 +56,7 @@ gulp.task('copy:npm-package', () => {
 gulp.task('npm-install', () => {
     return gulp
         .src('./dist/package.json')
-        .pipe(install({ npm: '--production' }));
+        .pipe(install({ npm: '--production --omit=dev' }));
 });
 
 gulp.task('optimize:js', () => {
@@ -69,7 +69,7 @@ gulp.task('optimize:js', () => {
 
 gulp.task('optimize:css', () => {
     return gulp
-        .src('./public/css/*.css')
+        .src(['./public/css/vendors.css', './public/css/main.css'])
         .pipe(concatCss('main.css'))
         .pipe(cleanCSS())
         .pipe(gulp.dest('./dist/public/css/'));
