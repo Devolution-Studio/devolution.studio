@@ -34,15 +34,17 @@ gulp.task('copy:assets', function () {
             ignore: [
                 './public/**/main.css',
                 './public/**/main.js',
-                './public/**/*.{svg,png,jpg,gif}',
+                './public/**/*.{svg,png,jpg,gif,ttf,woff,eof}',
             ],
         })
         .pipe(gulp.dest('./dist/public/'));
 });
 
-gulp.task('copy:images', function () {
+gulp.task('copy:files', function () {
     return gulp
-        .src('./public/**/*.{svg,png,jpg,gif}', { encoding: false })
+        .src('./public/**/*.{svg,png,jpg,gif,ttf,woff,woff2,eot}', {
+            encoding: false,
+        })
         .pipe(gulp.dest('./dist/public/'));
 });
 
@@ -142,7 +144,7 @@ gulp.task(
         'clean',
         'init:logs-folder',
         'copy:assets',
-        'copy:images',
+        'copy:files',
         'copy:env',
         'optimize:js',
         'optimize:css',
