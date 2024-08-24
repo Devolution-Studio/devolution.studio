@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "start": "node ./src/server.js",
-        "dev": "nodemon ./src/server.js",
+        "dev": "cd dist && gulp watch",
         "build": "gulp build",
         "prod": "cd ./dist/ && pm2 start ./server/server.js --name devolution"
     },
@@ -46,9 +46,12 @@
         "gulp-minify": "^3.1.0",
         "gulp-nodemon": "^2.5.0",
         "gulp-rename": "^2.0.0",
+        "gulp-showdown": "^0.1.0",
         "gulp-tap": "^2.0.0",
         "gulp-uglify": "^3.0.2",
         "nodemon": "^2.0.20",
+        "showdown": "^2.1.0",
+        "showdown-table": "^1.0.1",
         "terser-webpack-plugin": "^5.3.10",
         "webpack": "^5.93.0",
         "webpack-cli": "^5.1.1"

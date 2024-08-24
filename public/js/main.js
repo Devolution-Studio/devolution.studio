@@ -1122,7 +1122,7 @@
             const masthead = document.querySelector(
                 '.js-masthead-blog-article'
             );
-            const info = masthead.querySelector('.js-info');
+            const info = masthead.querySelectorAll('.js-info');
             const title = masthead.querySelector('.js-title');
 
             tl.fromTo(
@@ -2425,7 +2425,6 @@
         const destination = document.querySelector('section:nth-of-type(2)');
 
         target.addEventListener('click', () => {
-            console.log('Clicked ', target);
             gsap.to(window.document.documentElement, {
                 duration: 1,
                 ease: 'power2.inOut',

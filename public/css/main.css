@@ -854,9 +854,106 @@ p {
     margin: 0;
 }
 
+code {
+    color: #eb5757;
+}
+
+.code, code {
+    background: rgba(135, 131, 120, 0.15);
+    border-radius: 3px;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 85%;
+    tab-size: 2;
+}
+
+.code-block {
+    background: #f5f2f0;
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+}
+
+.code-block > code {
+    color: #000;
+    background: 0 0;
+    text-shadow: 0 1px #fff;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
 button:focus {
     outline: 0;
 }
+
+/*--------------------------------------------------
+	Tables
+---------------------------------------------------*/
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+
+.simple-table-header {
+	font-weight: 500;
+}
+
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
 
 /*--------------------------------------------------
 	04. Buttons
@@ -1935,7 +2032,7 @@ h6 {
 
 .blogPost.-single .blogPost__content li {
     padding: 0.375rem 0;
-    list-style: initial;
+    list-style: inside;
 }
 
 .blogPost.-single .blogPost__content li ul,

@@ -74,6 +74,27 @@ router.get('/services/', function (req, res, next) {
     });
 });
 
+/**
+ * Blog list page
+ */
+
+router.get('/blog/', function (req, res, next) {
+    utils.log(req, 'blog');
+    res.render('blog', {
+        year: new Date().getFullYear(),
+    });
+});
+
+router.get('/blog/:lang/:article', function (req, res, next) {
+    const article = req.params.article;
+    const lang = req.params.lang;
+
+    utils.log(req, article);
+    res.render('articles/' + article + '-' + lang, {
+        year: new Date().getFullYear(),
+    });
+});
+
 /*
  * Send mail
  */

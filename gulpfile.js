@@ -1,7 +1,6 @@
 require('dotenv').config();
 
-const fs = require('fs'),
-    path = require('path'),
+const path = require('path'),
     gulp = require('gulp'),
     concat = require('gulp-concat'),
     concatCss = require('gulp-concat-css'),
@@ -11,16 +10,9 @@ const fs = require('fs'),
     install = require('gulp-install'),
     rename = require('gulp-rename'),
     cleaner = require('gulp-clean'),
-    tap = require('gulp-tap'),
     nodemon = require('gulp-nodemon'),
-    newfile = require('gulp-file'),
-    vinyl = require('vinyl');
-
-const logsFolderPath = path.resolve(
-    __dirname,
-    './dist/',
-    path.dirname(process.env.LOG_FILE)
-);
+    vinyl = require('vinyl'),
+    gulpShowdown = require('gulp-showdown');
 
 const logsFilePath = path.resolve(__dirname, './dist/', process.env.LOG_FILE);
 
@@ -110,32 +102,52 @@ gulp.task('copy:views', () => {
     return gulp.src('./views/**/*.handlebars').pipe(gulp.dest('./dist/views/'));
 });
 
+gulp.task('render:md-articles', async () => {
+    process.chdir('./dist');
+    gulp.src('../public/articles/*.md')
+        .pipe(gulpShowdown({ table: true }))
+        .pipe(
+            rename(function (path) {
+                path.extname = '.handlebars';
+            })
+        )
+        .pipe(gulp.dest('./views/partials'));
+    process.chdir('../');
+});
+
 gulp.task('copy:env', () => {
     return gulp.src('./.env').pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('watch', function () {
-    gulp.watch('./public/**/*', gulp.parallel('reload'));
+gulp.task('watch', async function () {
+    process.chdir('./dist');
+
+    gulp.watch('../public/**/*', gulp.parallel('reload'));
     gulp.watch(
-        './src/**/*.js',
+        '../src/**/*.js',
         gulp
-            .src('./src/**/*.js')
+            .src('../src/**/*.js')
             .pipe(
                 rename(function (path) {
                     path.extname = '.js';
                 })
             )
-            .pipe(gulp.dest('./dist/server/'))
+            .pipe(gulp.dest('./server/'))
     );
     gulp.parallel(
         nodemon({
-            script: './dist/server/server.js',
+            script: './server/server.js',
         })
     );
 });
 
 gulp.task('reload', () => {
-    gulp.series('copy:assets', 'optimize:js', 'optimize:css');
+    gulp.series(
+        'copy:assets',
+        'optimize:js',
+        'optimize:css',
+        'render:md-articles'
+    );
 });
 
 gulp.task(
@@ -150,6 +162,7 @@ gulp.task(
         'optimize:css',
         'copy:server',
         'copy:views',
+        'render:md-articles',
         'copy:npm-package',
         'npm-install'
     )
