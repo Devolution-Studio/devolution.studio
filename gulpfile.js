@@ -137,8 +137,6 @@ gulp.task('watch', async function () {
             script: './server/server.js',
         })
     );
-
-    cb();
 });
 
 gulp.task('reload', () => {
