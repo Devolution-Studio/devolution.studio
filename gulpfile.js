@@ -55,7 +55,7 @@ gulp.task('npm-install', () => {
 
 gulp.task('optimize:js', () => {
     return gulp
-        .src(['./public/js/*.js'])
+        .src(['./public/js/main.js'])
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./dist/public/js/'));
@@ -103,16 +103,14 @@ gulp.task('copy:views', () => {
 });
 
 gulp.task('render:md-articles', async () => {
-    process.chdir('./dist');
-    gulp.src('../public/articles/*.md')
+    gulp.src('./public/articles/*.md')
         .pipe(gulpShowdown({ table: true }))
         .pipe(
             rename(function (path) {
                 path.extname = '.handlebars';
             })
         )
-        .pipe(gulp.dest('./views/partials'));
-    process.chdir('../');
+        .pipe(gulp.dest('./dist/views/partials'));
 });
 
 gulp.task('copy:env', () => {
@@ -139,6 +137,8 @@ gulp.task('watch', async function () {
             script: './server/server.js',
         })
     );
+
+    cb();
 });
 
 gulp.task('reload', () => {
