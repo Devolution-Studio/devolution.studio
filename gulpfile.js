@@ -9,7 +9,6 @@ const path = require('path'),
     minify = require('gulp-json-minify'),
     install = require('gulp-install'),
     rename = require('gulp-rename'),
-    replace = require('gulp-regex-replace'),
     cleaner = require('gulp-clean'),
     nodemon = require('gulp-nodemon'),
     vinyl = require('vinyl'),
@@ -105,12 +104,6 @@ gulp.task('copy:views', () => {
 
 gulp.task('render:md-articles', async () => {
     gulp.src('./public/articles/*.md')
-        .pipe(
-            replace({
-                regex: /^\!\[([a-zA-Z0-9+.]+)\]\(([a-zA-Z0-9%]+)\/([a-zA-Z0-9+.]+)\)/,
-                replace: '![$1](https://' + process.env.HOST + '/img/blog/$3)',
-            })
-        )
         .pipe(gulpShowdown({ table: true }))
         .pipe(
             rename(function (path) {
