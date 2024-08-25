@@ -6,7 +6,6 @@ const path = require('path'),
     concatCss = require('gulp-concat-css'),
     cleanCSS = require('gulp-clean-css'),
     uglify = require('gulp-uglify'),
-    minify = require('gulp-json-minify'),
     install = require('gulp-install'),
     rename = require('gulp-rename'),
     cleaner = require('gulp-clean'),
@@ -161,5 +160,19 @@ gulp.task(
         'copy:views',
         'render:md-articles',
         'npm-install'
+    )
+);
+
+gulp.task(
+    'refresh',
+    gulp.series(
+        'copy:assets',
+        'copy:files',
+        'copy:config-files',
+        'optimize:js',
+        'optimize:css',
+        'copy:server',
+        'copy:views',
+        'render:md-articles'
     )
 );

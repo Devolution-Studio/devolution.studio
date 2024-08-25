@@ -1,11 +1,3 @@
-# Arkage Parser Convention
-
-Normes et bonnes pratiques pour l'analyse syntaxique et l’interprétation des lignes de commande.
-
-# TL; DR
-
-Un résumé de cette convention est disponible sur le lien suivant :
-
 # Introduction
 
 Ce document vise à établir un cadre rigoureux pour la conception et l'interprétation des interfaces en ligne de commande (CLI). En définissant un ensemble de règles strictes concernant la syntaxe, les types de données et les structures de commandes, cette convention a pour objectifs :
@@ -21,7 +13,7 @@ Cette convention peut se révéler particulièrement utile pour les développeur
 
 # Les bases de l’interprétation
 
-![global.jpg](https://devolution.studio/img/blog/arkage/global.jpg)
+![global.jpg](/img/blog/arkage/global.jpg)
 
 Transformer une chaîne de caractères en une action précise : tel est le défi de l'interprétation des lignes de commande. Derrière la simplicité apparente d'une commande se cachent des mécanismes complexes d'analyse syntaxique et soulève de nombreuses questions :
 
@@ -165,7 +157,7 @@ Les flags sont souvent des raccourcis pour des options longues, qui sont génér
 
 ## Les arguments
 
-![assignments.jpg](https://devolution.studio/img/blog/arkage/assignments.jpg)
+![assignments.jpg](/img/blog/arkage/assignments.jpg)
 
 Les arguments sont des données fournies à une commande ou à une sous-commande afin de spécifier les éléments sur lesquels elle doit opérer. Ils sont étroitement liés aux options et aux flags, mais **se distinguent par leur type et leur position** dans la ligne de commande.
 

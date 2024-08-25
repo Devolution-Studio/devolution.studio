@@ -1916,7 +1916,6 @@ h6 {
     word-wrap: break-word;
     line-height: inherit;
     font-size: inherit;
-    color: inherit;
     transition: color 0.2s ease;
 }
 
@@ -2753,6 +2752,10 @@ h6 {
     color: black;
     font-weight: 500;
     padding-bottom: 0;
+}
+
+.header.-dark.is-top .header__nav a {
+    color: #fff;
 }
 
 @media (max-width: 767px) {
