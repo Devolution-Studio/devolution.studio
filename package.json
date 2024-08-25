@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "start": "node ./src/server.js",
+        "start": "node ./dist/server/server.js",
         "dev": "cd dist && gulp watch",
         "build": "gulp build",
         "prod": "cd ./dist/ && pm2 start ./server/server.js --name devolution"

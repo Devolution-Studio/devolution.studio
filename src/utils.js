@@ -8,7 +8,8 @@ const request = require('request-promise-native');
 
 const env_PROD = 'prod';
 
-var rootDir = process.cwd();
+const rootDir = path.join(__dirname, '../');
+console.log('Running from ' + rootDir);
 
 var sendContactMessage = async function (name, email, message) {
     if (name == undefined || email == undefined || message == undefined) {

@@ -1,0 +1,6 @@
+{
+    "watch": ["src", "public", "views"],
+    "ext": "*",
+    "ignore": ["node_modules"],
+    "delay": "200"
+}

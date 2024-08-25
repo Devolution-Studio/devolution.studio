@@ -40,13 +40,6 @@ gulp.task('copy:files', function () {
         .pipe(gulp.dest('./dist/public/'));
 });
 
-gulp.task('copy:npm-package', () => {
-    return gulp
-        .src('./package*.json')
-        .pipe(minify())
-        .pipe(gulp.dest('./dist/'));
-});
-
 gulp.task('npm-install', () => {
     return gulp
         .src('./dist/package.json')
@@ -113,29 +106,35 @@ gulp.task('render:md-articles', async () => {
         .pipe(gulp.dest('./dist/views/partials'));
 });
 
-gulp.task('copy:env', () => {
-    return gulp.src('./.env').pipe(gulp.dest('./dist/'));
+gulp.task('copy:config-files', () => {
+    return gulp.src(['./.env', './package*.json']).pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('watch', async function () {
-    process.chdir('./dist');
-
-    gulp.watch('../public/**/*', gulp.parallel('reload'));
+    gulp.watch('./public/**/*', gulp.parallel('reload'));
+    gulp.watch('./views/**/*', gulp.parallel('copy:views'));
     gulp.watch(
-        '../src/**/*.js',
+        './src/**/*.js',
         gulp
-            .src('../src/**/*.js')
+            .src('./src/**/*.js')
             .pipe(
                 rename(function (path) {
                     path.extname = '.js';
                 })
             )
-            .pipe(gulp.dest('./server/'))
+            .pipe(gulp.dest('./dist/server/'))
     );
     gulp.parallel(
         nodemon({
-            script: './server/server.js',
+            script: './dist/server/server.js',
+            config: './nodemon.json',
         })
+            .on('start', () => {
+                console.log('Démarrage du serveur...');
+            })
+            .on('restart', () => {
+                console.log('Redémarrage du serveur...');
+            })
     );
 });
 
@@ -155,13 +154,12 @@ gulp.task(
         'init:logs-folder',
         'copy:assets',
         'copy:files',
-        'copy:env',
+        'copy:config-files',
         'optimize:js',
         'optimize:css',
         'copy:server',
         'copy:views',
         'render:md-articles',
-        'copy:npm-package',
         'npm-install'
     )
 );

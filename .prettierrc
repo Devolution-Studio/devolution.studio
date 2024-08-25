@@ -8,9 +8,10 @@
     "endOfLine": "lf",
     "overrides": [
         {
-            "files": "src/**/*.hbs",
+            "files": "./views/**/*.handlebars",
             "options": {
-                "printWidth": 140
+                "printWidth": 140,
+                "parser": "angular"
             }
         }
     ]
