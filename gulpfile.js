@@ -10,7 +10,6 @@ const path = require('path'),
     rename = require('gulp-rename'),
     cleaner = require('gulp-clean'),
     nodemon = require('gulp-nodemon'),
-    vinyl = require('vinyl'),
     gulpShowdown = require('gulp-showdown');
 
 const logsFilePath = path.resolve(__dirname, './dist/', process.env.LOG_FILE);
@@ -73,23 +72,6 @@ gulp.task('copy:server', () => {
         .pipe(gulp.dest('./dist/server/'));
 });
 
-gulp.task('init:logs-folder', () => {
-    var src = require('stream').Readable({ objectMode: true });
-    src._read = function () {
-        this.push(
-            new vinyl({
-                cwd: '',
-                base: './',
-                path: './',
-                contents: Buffer.from('', 'utf-8'),
-            })
-        );
-        this.push(null);
-    };
-
-    return src.pipe(gulp.dest(logsFilePath));
-});
-
 gulp.task('copy:views', () => {
     return gulp.src('./views/**/*.handlebars').pipe(gulp.dest('./dist/views/'));
 });
@@ -150,7 +132,6 @@ gulp.task(
     'build',
     gulp.series(
         'clean',
-        'init:logs-folder',
         'copy:assets',
         'copy:files',
         'copy:config-files',

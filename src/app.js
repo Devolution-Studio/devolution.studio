@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(utils.rootDir, 'public')));
 
-if (process.env.ENV == utils.env_PROD) {
+if (process.env.ENV == 'prod') {
     app.use(
         logger('combined', {
             skip: function (req, res) {

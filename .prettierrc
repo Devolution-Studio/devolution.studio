@@ -11,7 +11,7 @@
             "files": "./views/**/*.handlebars",
             "options": {
                 "printWidth": 140,
-                "parser": "angular"
+                "parser": "glimmer"
             }
         }
     ]
