@@ -12,8 +12,6 @@ const path = require('path'),
     nodemon = require('gulp-nodemon'),
     gulpShowdown = require('gulp-showdown');
 
-const logsFilePath = path.resolve(__dirname, './dist/', process.env.LOG_FILE);
-
 gulp.task('clean', () => {
     return gulp.src('./dist/', { allowEmpty: true }).pipe(cleaner());
 });
@@ -24,7 +22,7 @@ gulp.task('copy:assets', function () {
             ignore: [
                 './public/**/main.css',
                 './public/**/main.js',
-                './public/**/*.{svg,png,jpg,gif,ttf,woff,eof}',
+                './public/**/*.{svg,png,jpg,gif,ttf,woff,eof,pdf}',
             ],
         })
         .pipe(gulp.dest('./dist/public/'));
@@ -32,7 +30,7 @@ gulp.task('copy:assets', function () {
 
 gulp.task('copy:files', function () {
     return gulp
-        .src('./public/**/*.{svg,png,jpg,gif,ttf,woff,woff2,eot}', {
+        .src('./public/**/*.{svg,png,jpg,gif,ttf,woff,woff2,eot,pdf}', {
             encoding: false,
         })
         .pipe(gulp.dest('./dist/public/'));
