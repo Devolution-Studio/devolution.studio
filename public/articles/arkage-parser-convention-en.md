@@ -13,7 +13,7 @@ This convention can be particularly useful for developers who wish to create the
 
 # Foundations of Interpretation
 
-![global.jpg](https://devolution.studio/blog/global.jpg)
+![global.jpg](https://devolution.studio/img/blog/global.jpg)
 
 Process a string of characters into a specific action is the challenge of command-line interpretation. Behind the apparent simplicity of a command lie complex mechanisms of syntactic analysis, raising numerous questions:
 
@@ -154,7 +154,7 @@ Flags are often shortcuts for long options, which are generally more explicit.
 
 ## Arguments
 
-![assignments.jpg](https://devolution.studio/blog/assignments.jpg)
+![assignments.jpg](https://devolution.studio/img/blog/assignments.jpg)
 
 Arguments are data provided to a command or subcommand to specify the elements on which it should operate. They are closely related to options and flags but are **distinguished by their type and their position** in the command line.
 

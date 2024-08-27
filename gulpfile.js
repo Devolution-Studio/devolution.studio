@@ -143,6 +143,20 @@ gulp.task(
 );
 
 gulp.task(
+    'build-light',
+    gulp.series(
+        'copy:assets',
+        'copy:files',
+        'copy:config-files',
+        'optimize:js',
+        'optimize:css',
+        'copy:server',
+        'copy:views',
+        'render:md-articles'
+    )
+);
+
+gulp.task(
     'refresh',
     gulp.series(
         'copy:assets',

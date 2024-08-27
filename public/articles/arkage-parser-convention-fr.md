@@ -13,7 +13,7 @@ Cette convention peut se révéler particulièrement utile pour les développeur
 
 # Les bases de l’interprétation
 
-![global.jpg](/img/blog/global.jpg)
+![global.jpg](https://devolution.studio/img/blog/global.jpg)
 
 Transformer une chaîne de caractères en une action précise : tel est le défi de l'interprétation des lignes de commande. Derrière la simplicité apparente d'une commande se cachent des mécanismes complexes d'analyse syntaxique et soulève de nombreuses questions :
 
@@ -157,7 +157,7 @@ Les flags sont souvent des raccourcis pour des options longues, qui sont génér
 
 ## Les arguments
 
-![assignments.jpg](/img/blog/assignments.jpg)
+![assignments.jpg](https://devolution.studio/img/blog/assignments.jpg)
 
 Les arguments sont des données fournies à une commande ou à une sous-commande afin de spécifier les éléments sur lesquels elle doit opérer. Ils sont étroitement liés aux options et aux flags, mais **se distinguent par leur type et leur position** dans la ligne de commande.
 
