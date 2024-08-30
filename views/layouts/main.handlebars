@@ -32,7 +32,11 @@
 
         <meta name='theme-color' content='#f5f5f5' />
 
-        <title>Devolution Studio</title>
+        {{#if title}}
+            <title>Devolution Studio - {{title}}</title>
+        {{else}}
+            <title>Devolution Studio</title>
+        {{/if}}
     </head>
 
     <body class='preloader-visible' data-barba='wrapper'>

@@ -30,6 +30,7 @@ router.get('/contact', function (req, res, next) {
         email: req.query.email,
         message: req.query.message,
         theme: 'light',
+        title: 'Contact',
     });
 });
 
@@ -41,6 +42,7 @@ router.get('/cgv/', function (req, res, next) {
         year: new Date().getFullYear(),
         date: process.env.CGV_LAST_UPDATE,
         theme: 'light',
+        title: 'Conditions générales de ventes',
     });
 });
 
@@ -52,6 +54,7 @@ router.get('/retractation/', function (req, res, next) {
     res.render('retractation', {
         year: new Date().getFullYear(),
         theme: 'light',
+        title: 'Rétractation',
     });
 });
 
@@ -62,6 +65,7 @@ router.get('/mentions-legales/', function (req, res, next) {
     res.render('mentions-legales', {
         year: new Date().getFullYear(),
         theme: 'light',
+        title: 'Mentions légales',
     });
 });
 
@@ -73,6 +77,7 @@ router.get('/tarifs/', function (req, res, next) {
         year: new Date().getFullYear(),
         recaptchaKey: process.env.RECAPTCHA_CLIENT_KEY,
         theme: 'light',
+        title: 'Tarifs',
     });
 });
 
@@ -83,6 +88,7 @@ router.get('/services/', function (req, res, next) {
     res.render('services', {
         year: new Date().getFullYear(),
         theme: 'light',
+        title: 'Services',
     });
 });
 
@@ -94,16 +100,21 @@ router.get('/blog/', function (req, res, next) {
     res.render('blog', {
         year: new Date().getFullYear(),
         theme: 'light',
+        title: 'Blog',
     });
 });
 
 router.get('/blog/:lang/:article', function (req, res, next) {
     const article = req.params.article;
     const lang = req.params.lang;
+    const title = (
+        article.charAt(0).toUpperCase() + article.slice(1)
+    ).replaceAll('-', ' ');
 
     res.render('articles/' + article + '-' + lang, {
         year: new Date().getFullYear(),
         theme: 'dark',
+        title: title,
     });
 });
 

@@ -55,7 +55,11 @@ app.set('views', utils.rootDir + '/views');
  */
 app.get('*', function (req, res) {
     res.status(req.status || 404);
-    res.render('404');
+    res.render('404', {
+        year: new Date().getFullYear(),
+        theme: 'light',
+        title: '404',
+    });
 });
 
 module.exports = app;
