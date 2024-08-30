@@ -56,6 +56,16 @@ router.get('/retractation/', function (req, res, next) {
 });
 
 /*
+ * Mentions légales Page
+ */
+router.get('/mentions-legales/', function (req, res, next) {
+    res.render('mentions-legales', {
+        year: new Date().getFullYear(),
+        theme: 'light',
+    });
+});
+
+/*
  * Pricing page
  */
 router.get('/tarifs/', function (req, res, next) {
