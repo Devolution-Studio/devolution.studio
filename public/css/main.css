@@ -2627,6 +2627,11 @@ h6 {
     opacity: 0.98;
 }
 
+.header.-light:hover .header__bar {
+    background-color: #fff;
+    opacity: 0.97;
+}
+
 .header.is-sticky.-sticky-light .header__nav {
     opacity: 1;
 }
