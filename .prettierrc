@@ -10,6 +10,7 @@
         {
             "files": "./views/**/*.handlebars",
             "options": {
+                "singleQuote": false,
                 "printWidth": 140,
                 "parser": "glimmer"
             }

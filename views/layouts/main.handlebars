@@ -1,36 +1,39 @@
-<html lang='fr'>
+<html lang="fr">
     <head>
         <!-- Required meta tags -->
-        <meta charset='UTF-8' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta
-            name='description'
-            content='Un développement sur-mesure adapté à vos besoin, faites-vous accompagner dans vos projet numérique.'
-        />
-        <meta name='keywords' content='Développement web, Gestion de projet, Ingénierie logiciel' />
-        <meta name='author' content='Devolution Studio' />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <!-- Google fonts -->
-        <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        {{#if description}}
+            <meta name="description" content="{{description}}" />
+        {{else}}
+            <meta
+                name="description"
+                content="Un développement sur-mesure adapté à vos besoin, faites-vous accompagner dans vos projet numérique."
+            />
+        {{/if}}
+
+        {{#if keywords}}
+            <meta name="keywords" content="{{keyword}}" />
+        {{else}}
+            <meta name="keywords" content="Développement web, Gestion de projet, Ingénierie logiciel" />
+        {{/if}}
+
+        <meta name="author" content="Devolution Studio" />
+        <meta name="msapplication-TileColor" content="#f5f5f5" />
+        <meta name="theme-color" content="#f5f5f5" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap'
-            rel='stylesheet'
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
         />
+        <link rel="stylesheet" href="/css/vendors.css" />
+        <link rel="stylesheet" href="/css/main.css" />
+        <link rel="icon" type="image/png" href="/img/favicon/favicon.png" />
 
-        <!-- Stylesheets -->
-        <link rel='stylesheet' href='/css/vendors.css' />
-        <link rel='stylesheet' href='/css/main.css' />
-
-        <!-- Scripts -->
-        <script src='https://code.jquery.com/jquery-3.6.3.min.js'></script>
-
-        <!-- Favicon -->
-        <link rel='icon' type='image/png' href='/img/favicon/favicon.png' />
-
-        <meta name='msapplication-TileColor' content='#f5f5f5' />
-
-        <meta name='theme-color' content='#f5f5f5' />
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 
         {{#if title}}
             <title>Devolution Studio - {{title}}</title>
@@ -39,166 +42,181 @@
         {{/if}}
     </head>
 
-    <body class='preloader-visible' data-barba='wrapper'>
-        <!-- preloader start -->
-        <div class='preloader js-preloader'>
-            <div class='preloader__bg'></div>
+    <body class="preloader-visible" data-barba="wrapper">
+        <div class="preloader js-preloader">
+            <div class="preloader__bg"></div>
 
-            <div class='preloader__progress'>
-                <div class='preloader__progress__inner'></div>
-                <img src='/img/general/loader.svg' alt='preloader image' class='preloader__img' />
+            <div class="preloader__progress">
+                <div class="preloader__progress__inner"></div>
+                <img src="/img/general/loader.svg" alt="preloader image" class="preloader__img" />
             </div>
         </div>
-        <!-- preloader end -->
 
-        <!-- cursor start -->
-        <div class='cursor js-cursor'>
-            <div class='cursor__wrapper'>
-                <div class='cursor__follower js-follower'></div>
-                <div class='cursor__label js-label'></div>
-                <div class='cursor__icon js-icon'></div>
+        <div class="cursor js-cursor">
+            <div class="cursor__wrapper">
+                <div class="cursor__follower js-follower"></div>
+                <div class="cursor__label js-label"></div>
+                <div class="cursor__icon js-icon"></div>
             </div>
         </div>
-        <!-- cursor end -->
 
-        <!-- barba container start -->
-        <div class='barba-container' data-barba='container'>
-            <!-- to-top-button start -->
-            <a data-cursor href='#' class='backButton js-backButton'>
-                <span class='backButton__bg'></span>
-                <div class='backButton__icon__wrap'>
-                    <i class='backButton__button js-top-button' data-feather='arrow-up'></i>
+        <div class="barba-container" data-barba="container">
+            <a data-cursor href="#" class="backButton js-backButton">
+                <span class="backButton__bg"></span>
+                <div class="backButton__icon__wrap">
+                    <i class="backButton__button js-top-button" data-feather="arrow-up"></i>
                 </div>
             </a>
-            <!-- to-top-button end -->
 
-            <main class=''>
-                <!-- header start -->
-                <header class='header -{{theme}} -sticky-light js-header'>
-                    <!-- header__bar start -->
-                    <div class='header__bar'>
-                        <div class='header__logo js-header-logo'>
-                            <a data-barba href='/#'>
-                                <img class='header__logo__dark js-lazy' src='/#' data-src='/img/logo/logo.png' alt='Devolution Studio.' />
+            <main>
+                <header class="header -{{theme}} -sticky-light js-header">
+                    <div class="header__bar">
+                        <div class="header__logo js-header-logo">
+                            <a data-barba href="/#">
+                                <img class="header__logo__dark js-lazy" src="/#" data-src="/img/logo/logo.png" alt="Devolution Studio." />
                             </a>
-                            <a data-barba href='/#'>
+                            <a data-barba href="/#">
                                 <img
-                                    class='header__logo__light js-lazy loaded'
-                                    src='/img/logo/logo-light.png'
-                                    alt='Logo'
-                                    data-ll-status='loaded'
+                                    class="header__logo__light js-lazy loaded"
+                                    src="/img/logo/logo-light.png"
+                                    alt="Logo"
+                                    data-ll-status="loaded"
                                 />
                             </a>
                         </div>
 
-                        <div class='header__nav'>
-                            <ul>
-                                <li>
-                                    <a class='button -underline' href='/blog/#'> Blog </a>
-                                </li>
-
-                                <li>
-                                    <a class='button -underline' href='/services/#'> Services </a>
-                                </li>
-
-                                <li>
-                                    <a class='button -underline' href='/tarifs/#'> Tarifs </a>
-                                </li>
-
-                                <li>
-                                    <a class='button -underline' href='/contact/#'> Contact </a>
-                                </li>
-                            </ul>
+                        <div class="header__menu js-header-menu" style="opacity: 1; transform: translate(0px, 0px);">
+                            <button type="button" class="nav-button-open js-nav-open">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-menu icon"
+                                ><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line
+                                        x1="3"
+                                        y1="18"
+                                        x2="21"
+                                        y2="18"
+                                    ></line></svg>
+                                <span></span>
+                                <span></span>
+                            </button>
                         </div>
                     </div>
-                    <!-- header__bar end -->
 
-                    <!-- nav start -->
-                    <nav class='nav js-nav'>
-                        <div class='nav__inner js-nav-inner'>
-                            <div class='nav__bg js-nav-bg'></div>
+                    <nav class="nav js-nav">
+                        <div class="nav__inner js-nav-inner">
+                            <div class="nav__bg js-nav-bg"></div>
 
-                            <div class='nav__container'>
-                                <div class='nav__header'>
-                                    <button type='button' class='nav-button-back js-nav-back'>
-                                        <i class='icon' data-feather='arrow-left-circle'></i>
+                            <div class="nav__container">
+                                <div class="nav__header">
+                                    <button type="button" class="nav-button-back js-nav-back">
+                                        <i class="icon" data-feather="arrow-left-circle"></i>
                                     </button>
 
-                                    <button type='button' class='nav-btn-close js-nav-close pointer-events-none'>
-                                        <i class='icon' data-feather='x'></i>
+                                    <button type="button" class="nav-btn-close js-nav-close pointer-events-none">
+                                        <i class="icon" data-feather="x"></i>
                                     </button>
+                                </div>
+                                <div class="nav__content">
+                                    <div class="nav__content__left">
+                                        <div class="navList__wrap">
+                                            <ul class="navList js-navList">
+                                                <li class="nav__home">
+                                                    <a class="button -underline" href="/#"> Accueil </a>
+                                                </li>
+
+                                                <li>
+                                                    <a class="button -underline" href="/blog/#"> Blog </a>
+                                                </li>
+
+                                                <li>
+                                                    <a class="button -underline" href="/services/#"> Services </a>
+                                                </li>
+
+                                                <li>
+                                                    <a class="button -underline" href="/tarifs/#"> Tarifs </a>
+                                                </li>
+
+                                                <li>
+                                                    <a class="button -underline" href="/contact/#"> Contact </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </nav>
-                    <!-- nav end -->
                 </header>
-                <!-- header end -->
 
                 {{{body}}}
 
-                <!-- footer start -->
-                <footer class='footer -type-1 bg-dark-1'>
-                    <!-- container start -->
-                    <div class='container'>
-                        <div class='footer__top'>
-                            <!-- row start -->
-                            <div class='row y-gap-48 justify-content-between'>
-                                <div class='col-lg-auto col-sm-12'>
-                                    <a href='#' class='footer__logo text-white'> Devolution Studio. </a>
-                                    <p class='mt-16'>Devolution Studio © Tous droits réservés</p>
+                <footer class="footer -type-1 bg-dark-1">
+                    <div class="container">
+                        <div class="footer__top">
+                            <div class="row y-gap-48 justify-content-between">
+                                <div class="col-lg-auto col-sm-12">
+                                    <a href="#" class="footer__logo text-white"> Devolution Studio. </a>
+                                    <p class="mt-16">Devolution Studio © Tous droits réservés</p>
                                 </div>
 
-                                <div class='col-lg-3 col-sm-6'>
-                                    <h4 class='text-xl fw-500 text-white'>Informations</h4>
+                                <div class="col-lg-3 col-sm-6">
+                                    <h4 class="text-xl fw-500 text-white">Informations</h4>
 
-                                    <div class='footer__content text-base text-light mt-16 sm:mt-12'>
+                                    <div class="footer__content text-base text-light mt-16 sm:mt-12">
                                         <p>Devolution Studio Angers, France</p>
-                                        <p class='mt-8'>
-                                            <a href='mailto:contact@devolution.studio'> contact@devolution.studio </a>
+                                        <p class="mt-8">
+                                            <a href="mailto:contact@devolution.studio"> contact@devolution.studio </a>
                                         </p>
                                     </div>
 
-                                    <h4 class='text-xl fw-500 text-white mt-32'>Plateformes</h4>
+                                    <h4 class="text-xl fw-500 text-white mt-32">Plateformes</h4>
 
-                                    <div class='footer__content text-base text-light mt-16 sm:mt-12'>
-                                        <p class='mt-8'>
-                                            <a target='_blank' href='https://www.codeur.com/-devolution-studio'> Codeur.com </a>
+                                    <div class="footer__content text-base text-light mt-16 sm:mt-12">
+                                        <p class="mt-8">
+                                            <a target="_blank" href="https://www.codeur.com/-devolution-studio"> Codeur.com </a>
                                         </p>
                                     </div>
                                 </div>
 
-                                <div class='col-lg-auto col-sm-4'>
-                                    <h4 class='text-xl fw-500 text-white'>Liens</h4>
+                                <div class="col-lg-auto col-sm-4">
+                                    <h4 class="text-xl fw-500 text-white">Liens</h4>
 
-                                    <div class='footer__content text-base text-light mt-16 sm:mt-12'>
+                                    <div class="footer__content text-base text-light mt-16 sm:mt-12">
                                         <div>
-                                            <a data-barba href='/contact/#' class='button -underline'> Contact </a>
+                                            <a data-barba href="/contact/#" class="button -underline"> Contact </a>
                                         </div>
                                         <div>
-                                            <a data-barba href='/services/#' class='button -underline'> Services </a>
+                                            <a data-barba href="/services/#" class="button -underline"> Services </a>
                                         </div>
                                         <div>
-                                            <a data-barba href='/tarifs/#' class='button -underline'> Tarifs </a>
+                                            <a data-barba href="/tarifs/#" class="button -underline"> Tarifs </a>
                                         </div>
                                         <div>
-                                            <a data-barba href='/cgv/#' class='button -underline'> Conditions générales de ventes </a>
+                                            <a data-barba href="/cgv/#" class="button -underline"> Conditions générales de ventes </a>
                                         </div>
                                         <div>
-                                            <a data-barba href='/retractation/#' class='button -underline'>Retractation</a>
+                                            <a data-barba href="/retractation/#" class="button -underline">Retractation</a>
                                         </div>
                                         <div>
-                                            <a data-barba href='/mentions-legales/#' class='button -underline'>Mentions légales</a>
+                                            <a data-barba href="/mentions-legales/#" class="button -underline">Mentions légales</a>
                                         </div>
                                         <div>
-                                            <a data-barba href='https://teoconan.fr' target='_blank' class='button -underline'> Web CV </a>
+                                            <a data-barba href="https://teoconan.fr" target="_blank" class="button -underline"> Web CV </a>
                                         </div>
                                         <div>
                                             <a
                                                 data-barba
-                                                href='https://www.societe.com/etablissement/devolution-studio-94899971900016.html'
-                                                target='_blank'
-                                                class='button -underline'
+                                                href="https://www.societe.com/etablissement/devolution-studio-94899971900016.html"
+                                                target="_blank"
+                                                class="button -underline"
                                             >
                                                 Societe.fr
                                             </a>
@@ -206,30 +224,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- row end -->
                         </div>
 
-                        <div class='footer__bottom -light'>
-                            <!-- row start -->
-                            <div class='row'>
-                                <div class='col'>
-                                    <div class='footer__copyright'>
-                                        <p class='text-light'>{{{year}}}, Devolution Studio.</p>
+                        <div class="footer__bottom -light">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="footer__copyright">
+                                        <p class="text-light">{{{year}}}, Devolution Studio.</p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- row end -->
                         </div>
                     </div>
-                    <!-- container end -->
                 </footer>
-                <!-- footer end -->
             </main>
         </div>
-        <!-- barba container end -->
 
-        <!-- JavaScript -->
-        <script src='/js/vendors.js'></script>
-        <script src='/js/main.js'></script>
+        <script src="/js/vendors.js"></script>
+        <script src="/js/main.js"></script>
     </body>
 </html>

@@ -101,6 +101,7 @@ router.get('/blog/', function (req, res, next) {
         year: new Date().getFullYear(),
         theme: 'light',
         title: 'Blog',
+        isBlog: true,
     });
 });
 
@@ -115,6 +116,7 @@ router.get('/blog/:lang/:article', function (req, res, next) {
         year: new Date().getFullYear(),
         theme: 'dark',
         title: title,
+        isArticle: true,
     });
 });
 

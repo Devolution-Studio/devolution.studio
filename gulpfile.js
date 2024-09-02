@@ -1,7 +1,6 @@
 require('dotenv').config();
 
-const path = require('path'),
-    gulp = require('gulp'),
+const gulp = require('gulp'),
     concat = require('gulp-concat'),
     concatCss = require('gulp-concat-css'),
     cleanCSS = require('gulp-clean-css'),
