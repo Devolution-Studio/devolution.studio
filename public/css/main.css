@@ -2970,11 +2970,13 @@ h6 {
     .navList__wrap li {
         padding: 1rem 2rem;
     }
+
+    .navList__wrap li {
+        padding: 1rem 2rem;
+    }
     
-    .navList__wrap a {
-        color: #000;
-        font-weight: 500;
-        padding-bottom: 0;
+    .header.-dark.is-top .navList__wrap a {
+        color: white;
     }
 
     .navList__wrap .nav__home {
@@ -3009,6 +3011,7 @@ h6 {
     
     .navList {
         margin-top: -0.5rem;
+        padding: 5rem;
         pointer-events: none;
     }
     
@@ -12350,6 +12353,10 @@ html.full-page-slider body {
     .layout-pt-pageHeader {
         padding-top: 8.75rem;
     }
+}
+
+.gap-32 {
+    gap: 1rem;
 }
 
 .x-gap-32 {
