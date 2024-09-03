@@ -12553,6 +12553,7 @@ html.full-page-slider body {
 .fancy-grid {
     display: flex;
     flex-wrap: wrap;
+    row-gap: 4rem;
 }
 
 .fancy-grid.-container {

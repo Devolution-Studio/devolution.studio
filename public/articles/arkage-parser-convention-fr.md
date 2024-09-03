@@ -216,8 +216,6 @@ Les sous-commandes disponibles sont :
 -   `help`
 -   `ping`
 -   `register`
--   `start`
--   `exit`
 
 La commande `help` ne prend aucuns arguments mais peut prendre l’option suivantes :
 
@@ -231,71 +229,43 @@ Pour la sous-commande `ping`, celle ci ne prend pas d’options mais peut prendr
 arkage ping 4 us uk eu-west eu-est
 ```
 
-Le 1er argument spécifie le nombre de tentatives, le reste les serveurs à atteindre
-
-Les arguments sont reconverti dans un tableau pour le traitement de l’information
-
+Le 1er argument spécifie le nombre de tentatives, le reste les serveurs à atteindre. Les arguments sont reconvertis dans un tableau pour le traitement de l’information.
 Voici donc la déclaration des arguments pour cette sous-commande :
 
 -   Tentatives `int`
 -   Serveurs `Array<string>`
 
-Un `Array` doit toujours être le dernier argument car il peut contenir une infinité de valeurs
+Un `Array` doit toujours être le dernier argument car celui-ci peut contenir une infinité de valeurs
 
-### Options globales
+Concernant la sous-commande `register`, les options `--credentials` et `--key` s'excluent mutuellement. Seule l'une des deux peut être utilisée dans une même commande. Car il est uniquement possible de se connecter grâce à une clé, soit avec des identifiants.
 
 ```bash
 arkage register -c teo@arkage.com 1234aze*
 arkage register -k ./id_rsa
-arkage register -s eu-west -k ./id_rsa -v --lang en
+arkage register -s eu-west -k ./id_rsa -c teo@arkage.com 1234aze* -v --lang en
+# Syntaxe valide
 # Erreur, mais côté traitement de la commande car -c et -k sont incompatible
-
 ```
 
-# Déclaration d’une commande
+## Conclusion
 
-## Déclaration des sous-commandes
+Cette convention a établi un cadre rigoureux pour la conception et l'interprétation des interfaces en ligne de commande. En définissant des règles strictes concernant la syntaxe, les types de données et les structures de commandes, nous avons jeté les bases d'une expérience utilisateur cohérente et intuitive.
 
-Liste des sous-commandes disponibles
+**Les points clés à retenir sont :**
 
-Comporte la liste et les types d’arguments possible
+- **Importance de la convention de nommage:** L'utilisation du kebab-case améliore la lisibilité et la maintenabilité des commandes.
+- **Typage des arguments:** Le typage strict permet de valider les entrées utilisateur et de réduire les erreurs.
+- **Structure des commandes:** La distinction entre commandes, sous-commandes, options et arguments est essentielle pour une organisation claire.
+- **Attribution des valeurs:** Les valeurs et les arguments doivent être attribués dans l'ordre à leurs options et leurs sous-commances
+- **Gestion des erreurs:** Une bonne gestion des erreurs est indispensable pour fournir des messages d'erreur clairs et constructifs.
 
-Comporte les options possible pour la sous-commande
+## À venir
 
-## Déclaration des arguments
+**Et ce n'est qu'un début !** Nous prévoyons d'étendre cette convention en abordant des sujets tels que :
 
-Pour interpréter une commande, le mieux est de savoir en avance ce que l’on attend
+- **Complétion intelligente:** Tirant parti du typage pour proposer des suggestions pertinentes.
+- **Messages d'erreur détaillés:** Guidant l'utilisateur vers une résolution rapide des problèmes.
+- **Priorité des options et flags:** Clarifiant les règles de résolution des conflits.
+- **Commandes imbriquées:** Offrant une flexibilité accrue pour les utilisateurs expérimentés.
 
-Pour la commande suivante :
-
-```bash
-tail -f -50 logs.txt
-# Fonctionne aussi
-tail -f logs.txt
-# Ne fonctionne pas
-tail -f logs.txt -50
-```
-
-Le flag `-f` pour “follow”
-
-`-50` n’est pas un flag mais un argument de type `signed int`
-
-La commande attend les arguments suivants : `signed int`, `filepath (string)`
-
-Ou sinon uniquement `filepath (string)`
-
-Mais pas `filepath (string)`, `signed int`
-
-## Options globales
-
-Des options peuvent être commune dans n’importe quel contexte, comme `-v` par exemple
-
-## Options de sous-commandes
-
-Des options et des flags ne peuvent être disponible qu’à propos d’une sous-commande
-
-# Intégration Typescript
-
-# Sources
-
-[https://www.php.net/manual/fr/functions.arguments.php#functions.variable-arg-list](https://www.php.net/manual/fr/functions.arguments.php#functions.variable-arg-list)
+**N'hésitez pas à contribuer à l'évolution de cette convention [via notre GitHub](https://github.com/Devolution-Studio/devolution.studio/issues)**

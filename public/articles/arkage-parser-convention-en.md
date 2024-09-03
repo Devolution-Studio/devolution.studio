@@ -213,8 +213,6 @@ Available sub-commands are :
 - `help`
 - `ping`
 - `register`
-- `start`
-- `exit`
 
 `help` command don’t takes any arguments but can takes these options :
 
@@ -235,11 +233,34 @@ The first argument specifies the number of attempts, and the rest specify the se
 
 An `Array` must always be the last argument because it can contain an infinite number of values.
 
-### Global options
+Regarding the register subcommand, the `--credentials` and `--key` options are mutually exclusive. Only one of the two can be used in the same command. This is because it is only possible to connect using a key or with credentials.
 
 ```bash
 arkage register -c teo@arkage.com 1234aze*
 arkage register -k ./id_rsa
-arkage register -s eu-west -k ./id_rsa -v --lang en
+arkage register -s eu-west -k ./id_rsa -c teo@arkage.com 1234aze* -v --lang en
 # Error, but on the command processing side because -c and -k are incompatible
 ```
+
+## Conclusion
+
+This convention has established a rigorous framework for the design and interpretation of command-line interfaces. By defining strict rules regarding syntax, data types, and command structures, we have laid the foundation for a consistent and intuitive user experience.
+
+Key takeaways include:
+
+- **Importance of naming conventions:** The use of kebab-case improves the readability and maintainability of commands.
+- **Argument typing:** Strict typing allows for validation of user input and reduces errors.
+- **Command structure:** The distinction between commands, subcommands, options, and arguments is essential for clear organization.
+- **Assigning values:** Values and arguments must be assigned in order to their options and subcommands.
+- **Error handling:** Proper error handling is essential to provide clear and constructive error messages.
+
+## What's next
+
+And this is just the beginning! We plan to expand this convention by addressing topics such as:
+
+- **Intelligent completion:** Leveraging typing to suggest relevant options.
+- **Detailed error messages:** Guiding the user towards a quick resolution of issues.
+- **Option and flag precedence:** Clarifying conflict resolution rules.
+- **Nested commands:** Offering increased flexibility for experienced users.
+
+**Feel free to contribute to the evolution of this convention [via our GitHub](https://github.com/Devolution-Studio/devolution.studio/issues)**
