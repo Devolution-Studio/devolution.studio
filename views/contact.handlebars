@@ -1,23 +1,14 @@
-<!-- section start -->
-<section class='layout-pt-xl layout-pb-sm'>
-    <!-- container start -->
-    <div data-anim-wrap class='container'>
-        <!-- row start -->
-        <div class='row justify-content-center'>
-            <div class='col-xl-9'>
-                <div
-                    data-anim-child='slide-up delay-1'
-                    class='sectionHeading -md'
-                >
-                    <h1 class='sectionHeading__title'>
+<section class="layout-pt-xl layout-pb-sm">
+    <div data-anim-wrap class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9">
+                <div data-anim-child="slide-up delay-1" class="sectionHeading -md">
+                    <h1 class="sectionHeading__title">
                         Un projet en tête ?
                     </h1>
-                    <p class='text-black leading-md mt-24'>
+                    <p class="text-black leading-md mt-24">
                         Remplissez le formulaire ci-dessous ou
-                        <a
-                            href='mailto:contact@devolution.studio'
-                            class='fw-700'
-                        >
+                        <a href="mailto:contact@devolution.studio" class="fw-700">
                             envoyez-nous un mail
                         </a>
                         .
@@ -25,21 +16,15 @@
                 </div>
             </div>
         </div>
-        <!-- row end -->
 
-        <!-- row start -->
-        <div
-            data-anim-child='slide-up delay-1'
-            class='row justify-content-center layout-pt-sm'
-        >
-            <div class='col-xl-9'>
-                <div class='contact-form -type-1'>
-                    {{> contact-form}}
+        <div data-anim-child="slide-up delay-1" class="row justify-content-center layout-pt-sm">
+            <div class="col-xl-9">
+                <div class="contact-form -type-1">
+                    {{! prettier-ignore-start }}
+                    {{> contact-form }}
+                    {{! prettier-ignore-end }}
                 </div>
             </div>
         </div>
-        <!-- row end -->
     </div>
-    <!-- container end -->
 </section>
-<!-- section end -->
