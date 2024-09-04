@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Devolution Deployment
 
 on:
     push:
@@ -27,20 +27,21 @@ jobs:
             - name: Installation des dépendances
               run: npm install
 
-            - name: Build du projet Typescript
+            - name: Build du projet
               run: |
                   npm run build
-                  cp ./package.json ./dist/
-                  cp ./package-lock.json ./dist/
 
             - name: Fichier env
               run: |
-                  echo "DEBUG=false" >> ./dist/.env
-                  echo "APP_ID=${{ secrets.APP_ID }}" >> ./dist/.env
-                  echo "CLIENT_TOKEN=${{ secrets.CLIENT_TOKEN }}" >> ./dist/.env
-
-            - name: Tests unitaires
-              run: npm run test
+                  echo "HOST=devolution.studio" >> ./dist/.env
+                  echo "PORT=8081" >> ./dist/.env
+                  echo "ENV=prod" >> ./dist/.env
+                  echo "CGV_LAST_UPDATE=19/02/2023" >> ./dist/.env
+                  echo "MAIL_USER_TO=${{ secrets.MAIL_USER_TO }}" >> ./dist/.env
+                  echo "MAIL_USER=${{ secrets.MAIL_USER }}" >> ./dist/.env
+                  echo "MAIL_PASSWORD=${{ secrets.MAIL_PASSWORD }}" >> ./dist/.env
+                  echo "RECAPTCHA_CLIENT_KEY=${{ secrets.RECAPTCHA_CLIENT_KEY }}" >> ./dist/.env
+                  echo "RECAPTCHA_SERVER_KEY=${{ secrets.RECAPTCHA_SERVER_KEY }}" >> ./dist/.env
 
             - name: Upload de l'artefact
               uses: actions/upload-artifact@main
@@ -63,4 +64,4 @@ jobs:
                       cd ${{ secrets.REMOTE_TARGET }}
                       npm i
                       pm2 stop devolution2 -s
-                      pm2 start ./server/server.js --name devolution -s
+                      pm2 start ./server/server.js --name devolution2 -s
