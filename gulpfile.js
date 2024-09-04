@@ -85,7 +85,9 @@ gulp.task('render:md-articles', async () => {
 });
 
 gulp.task('copy:config-files', () => {
-    return gulp.src(['./.env', './package*.json']).pipe(gulp.dest('./dist/'));
+    return gulp
+        .src(['./.env', './package*.json'], { allowEmpty: true })
+        .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('watch', async function () {
