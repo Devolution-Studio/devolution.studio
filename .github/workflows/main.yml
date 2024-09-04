@@ -24,14 +24,14 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'npm'
 
-            - name: Installation des dépendances
+            - name: Dependencies
               run: npm install
 
-            - name: Build du projet
+            - name: Project build
               run: |
                   npm run build
 
-            - name: Fichier env
+            - name: Env file
               run: |
                   echo "HOST=devolution.studio" >> ./dist/.env
                   echo "PORT=8081" >> ./dist/.env
@@ -43,13 +43,13 @@ jobs:
                   echo "RECAPTCHA_CLIENT_KEY=${{ secrets.RECAPTCHA_CLIENT_KEY }}" >> ./dist/.env
                   echo "RECAPTCHA_SERVER_KEY=${{ secrets.RECAPTCHA_SERVER_KEY }}" >> ./dist/.env
 
-            - name: Upload de l'artefact
+            - name: Artifact upload
               uses: actions/upload-artifact@main
               with:
                   name: dist-artifact
                   path: dist/
 
-            - name: Déploiement
+            - name: Deploy
               uses: easingthemes/ssh-deploy@main
               with:
                   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
