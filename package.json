@@ -6,7 +6,7 @@
         "start": "node ./dist/server/server.js",
         "dev": "gulp watch",
         "build": "gulp build",
-        "prod": "cd ./dist/ && pm2 start ./server/server.js --name devolution"
+        "prod": "pm2 start ./dist/server/server.js --name devolution"
     },
     "dependencies": {
         "body-parser": "^1.20.1",

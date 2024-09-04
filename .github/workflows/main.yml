@@ -63,5 +63,5 @@ jobs:
                       export PATH=$PATH:${{ secrets.REMOTE_NODE_BIN_FOLDER }}
                       cd ${{ secrets.REMOTE_TARGET }}
                       npm i
-                      pm2 stop devolution2 -s
-                      pm2 start ./server/server.js --name devolution2 -s
+                      pm2 stop devolution -s
+                      pm2 start ./server/server.js --name devolution -s
