@@ -267,5 +267,6 @@ Cette convention a établi un cadre rigoureux pour la conception et l'interprét
 - **Messages d'erreur détaillés:** Guidant l'utilisateur vers une résolution rapide des problèmes.
 - **Priorité des options et flags:** Clarifiant les règles de résolution des conflits.
 - **Commandes imbriquées:** Offrant une flexibilité accrue pour les utilisateurs expérimentés.
+- **Regex dans les commandes:** Ou comment exécuter plusieurs actions grâces aux expressions régulières
 
 **N'hésitez pas à contribuer à l'évolution de cette convention [via notre GitHub](https://github.com/Devolution-Studio/devolution.studio/issues)**
