@@ -39,8 +39,8 @@ jobs:
                   echo "MAIL_USER_TO=${{ secrets.MAIL_USER_TO }}" >> ./dist/.env
                   echo "MAIL_USER=${{ secrets.MAIL_USER }}" >> ./dist/.env
                   echo "MAIL_PASSWORD=${{ secrets.MAIL_PASSWORD }}" >> ./dist/.env
-                  echo "RECAPTCHA_CLIENT_KEY=${{ secrets.RECAPTCHA_CLIENT_KEY }}" >> ./dist/.env
-                  echo "RECAPTCHA_SERVER_KEY=${{ secrets.RECAPTCHA_SERVER_KEY }}" >> ./dist/.env
+                  echo "HCAPTCHA_CLIENT_KEY=${{ secrets.HCAPTCHA_CLIENT_KEY }}" >> ./dist/.env
+                  echo "HCAPTCHA_SERVER_KEY=${{ secrets.HCAPTCHA_SERVER_KEY }}" >> ./dist/.env
 
             - name: Artifact upload
               uses: actions/upload-artifact@main

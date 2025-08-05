@@ -25,7 +25,7 @@ router.get('/', function (req, res, next) {
 router.get('/contact', function (req, res, next) {
     res.render('contact', {
         year: new Date().getFullYear(),
-        recaptchaKey: process.env.RECAPTCHA_CLIENT_KEY,
+        recaptchaKey: process.env.HCAPTCHA_CLIENT_KEY,
         name: req.query.name,
         email: req.query.email,
         message: req.query.message,
@@ -75,7 +75,7 @@ router.get('/mentions-legales/', function (req, res, next) {
 router.get('/tarifs/', function (req, res, next) {
     res.render('pricing', {
         year: new Date().getFullYear(),
-        recaptchaKey: process.env.RECAPTCHA_CLIENT_KEY,
+        recaptchaKey: process.env.HCAPTCHA_CLIENT_KEY,
         theme: 'light',
         title: 'Tarifs',
     });

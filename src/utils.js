@@ -1,7 +1,7 @@
 const path = require('path');
 const moment = require('moment');
 const nodemailer = require('nodemailer');
-const request = require('request-promise-native');
+const { verify } = require('hcaptcha');
 
 const rootDir = path.join(__dirname, '../');
 console.log('Running from ' + rootDir);
@@ -60,25 +60,15 @@ function log(req, page, data = null) {
 }
 
 async function validateCaptcha(req) {
-    const recaptchaResponse = req.body['g-recaptcha-response'];
-    const secretKey = process.env.RECAPTCHA_SERVER_KEY;
-    const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaResponse}`;
+    const token = req.body['g-recaptcha-response'];
+    const result = await verify(process.env.HCAPTCHA_SERVER_KEY, token);
 
-    if (!recaptchaResponse) {
-        return false;
-    }
-
-    const response = await request.post(verificationUrl);
-
-    // Analyser la réponse de l'API reCAPTCHA
-    const responseBody = JSON.parse(response);
-
-    if (!responseBody.success) {
+    if (result.success != true) {
         const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
         console.error(`Failed captcha for ${ip}`);
     }
 
-    return responseBody.success;
+    return result.success === true;
 }
 
 module.exports = {
